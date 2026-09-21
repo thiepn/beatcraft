@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f1e5",
   "theme_color": "#f6f1e5",
-  "description": "A release-hardened rhythm arcade with curated music, music-integrated charts, accessibility controls and local progress.",
+  "description": "BeatCraft 3 rhythm arcade with CC0 charts locked to detected attacks in the actual recording, accessible controls, local progress, and offline shell support.",
   "icons": [
     {
       "src": "./icon.svg",
