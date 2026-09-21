@@ -1,76 +1,62 @@
 # BeatCraft 3 — Current Release Certification
 
-**Current build:** `3.0.0-rc8`  
-**Current phase:** 17 — Official Pack Human Certification  
+**Current build:** `3.0.0`  
+**Current phase:** 18 — Final Release Hardening & Release Freeze  
 **Catalog:** Core 18 + 10 CC0  
 **Playable tracks:** 28  
-**Chart slots:** 84  
+**Chart slots:** 84
 
 ## Automated certification status
 
-**PASS**
+**PASS — 22 / 22 deterministic checks**
 
-The active build passes the automated release suite after Phase 17.
+The v3.0.0 source line passes the deterministic release audit after Phase 18.
 
-### Phase 17 Official Pack certification integrity
+### Phase 18 release hardening
 
-- Official Pack remains **10 tracks / 30 chart slots**
-- seed / untouched auto-draft charts cannot pass the human release gate
-- exact accepted recording identity remains mandatory
-- waveform analysis remains bound to that exact recording
-- timing confirmation remains bound to that exact recording
-- audition coverage now requires **95%** of the exact current chart revision
-- audition coverage is bound to:
-  - track
-  - difficulty
-  - chart revision
-  - accepted recording identity
-- six explicit human review criteria are required
-- reviewer initials/name are required
-- human review is bound to current revision + recording identity
-- clean playtest evidence now records:
-  - human run
-  - 1.0× speed
-  - full chart
-  - no mirror
-  - current chart revision
-  - current accepted recording identity
-- stale revision / wrong recording / autoplay / partial / altered-speed evidence cannot satisfy release verification
-- changing notes, timing or accepted audio invalidates downstream human evidence
-- Official Pack page now exposes the next unresolved human gate
-- portable Phase 17 evidence export/import added
-- no audio binaries are included in evidence bundles
-
-### Evidence invalidation test
-
-A synthetic valid Official Pack evidence chain passed verification with every human gate present.
-
-Changing only the chart revision immediately invalidated:
-
-- audition coverage
-- audition confirmation
-- human review
-- performance playtest
-
-and correctly blocked verification again.
+- release manifest frozen at `3.0.0` / Phase 18;
+- stale Phase 16 / RC8 footer metadata corrected;
+- GitHub Pages paths remain repository-relative;
+- web app manifest added;
+- same-origin offline shell service worker added;
+- navigation uses network-first with cached-shell fallback;
+- cross-origin Official Pack audio is not service-worker cached;
+- progress export upgraded to a versioned full backup;
+- full backup includes validated authored maps but no audio binaries;
+- legacy flat progress imports remain supported;
+- malformed/incompatible full backups are rejected;
+- authored maps now keep a last-known-valid local backup;
+- `ResizeObserver` and `matchMedia` now have safe fallbacks;
+- Phase 17 evidence exports are stamped with build `3.0.0`.
 
 ### Release audit
 
-`BeatRelease.audit()`: **21 / 21 automated checks pass**
+`BeatRelease.audit()`: **22 / 22 automated checks pass**
 
-The new Phase 17 gate verifies that human certification cannot be silently replaced by generated/seed evidence.
+The Phase 18 gate additionally verifies release freeze metadata, GitHub Pages-relative asset paths, the manifest link, backup primitives, and local-storage capability.
+
+## Phase 17 Official Pack certification integrity
+
+The existing Phase 17 evidence chain remains mandatory:
+
+- exact accepted recording identity;
+- waveform analysis bound to that recording;
+- timing confirmation bound to that recording;
+- at least 95% audition coverage of the exact current chart revision;
+- six-point explicit human review;
+- reviewer identity;
+- full human 1.0× playtest with no mirror/partial/autoplay substitution;
+- final verification bound to the same revision and recording.
+
+Seed / untouched auto-draft charts still cannot pass the human release gate.
 
 ## Actual Official Pack certification status
 
 **0 / 30 human-certified in the shipped repository state.**
 
-This is intentional. Phase 17 hardens and operationalizes the certification workflow; it does not fabricate listening, review or physical playtest evidence.
+Phase 18 does not fabricate human evidence.
 
-The remaining work must be done by a person using the Phase 17 queue:
-
-`accepted recording → analyzed → audio-informed map → timing → ≥95% audition → six-point review → full 1.0× playtest → verify`
-
-## Previous certification remains intact
+## Previous automated certification remains intact
 
 ### Core chart certification
 
@@ -80,46 +66,47 @@ The remaining work must be done by a person using the Phase 17 queue:
 - difficulty nesting preserved: **Chill ⊂ Flow ⊂ Rush**
 - perfect-session simulation remains green
 
-### Performance/device certification
+### Performance / device certification
 
 Phase 15 remains intact:
 
-- adaptive decorative rendering
-- decoded external-audio LRU cap
-- device diagnostics
-- latency information
-- background/focus recovery
+- adaptive decorative rendering;
+- decoded external-audio LRU cap;
+- device diagnostics;
+- latency information;
+- background/focus recovery.
 
-### Accessibility/controls certification
+### Accessibility / controls certification
 
 Phase 16 remains intact:
 
-- remappable and one-hand controls
-- non-color lane cues
-- reduced motion/effects
-- high contrast
-- large controls
-- screen-reader status summaries
-- focus restoration
+- remappable and one-hand controls;
+- non-color lane cues;
+- reduced motion/effects;
+- high contrast;
+- large controls;
+- screen-reader status summaries;
+- focus restoration.
 
 ## Human release gates still open
 
 ### Core music
+
 The 18 generated Core songs still require completion of the Phase 11 subjective listening checklist.
 
 ### Core charts
+
 The 54 Core charts still require the Phase 12 physical playtest checklist.
 
 ### Official Pack
+
 All 30 CC0 chart slots still require Phase 17 human evidence.
 
-## Current release conclusion
+## Final release conclusion
 
-**Core 18 automated RC certification: PASS.**
+**v3.0.0 code / deterministic release certification: PASS and frozen.**
 
-**Official Pack certification workflow: HARDENED AND READY.**
-
-**Full 28-track human release certification: NOT YET COMPLETE.**
+**Full 28-track human certification: NOT YET COMPLETE.**
 
 See:
 
@@ -130,3 +117,4 @@ See:
 - `PHASE15_PERFORMANCE_DEVICE_LATENCY.md`
 - `PHASE16_ACCESSIBILITY_CONTROLS.md`
 - `PHASE17_OFFICIAL_PACK_CERTIFICATION.md`
+- `PHASE18_FINAL_RELEASE_HARDENING.md`
