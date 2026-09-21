@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#f6f1e5" name="theme-color"/>
-<meta content="BeatCraft 3 v3.0.1: CC0 charts are rebuilt from detected attacks in the actual recording instead of catalog-grid auto-drafts, with resilient backups, offline shell support, and accessibility controls." name="description"/>
-<title>BeatCraft 3 — v3.0.1</title>
+<meta content="BeatCraft 3 v3.1.0: import your own local songs, keep commercial audio private in the browser, and generate recording-locked Chill, Flow, and Rush beatmaps locally." name="description"/>
+<title>BeatCraft 3 — v3.1.0</title>
 <link href="./icon.svg" rel="icon" type="image/svg+xml"/>
 <link href="./manifest.webmanifest" rel="manifest"/>
 <style>:root{--paper:#f6f1e5;--ink:#242c32;--muted:#646962;--line:#d8d5c9;--coral:#ff7467;--yellow:#f8ce47;--green:#91d49b;--blue:#68bfea;--surface:#fffdf6;--dark:#19212c;--display:'Arial Rounded MT Bold','Trebuchet MS',system-ui,sans-serif;--body:Inter,'Segoe UI',Arial,sans-serif}
@@ -31,6 +31,8 @@ body.playing .warning-banner{display:none}
 
 /* Real music / CC0 catalog */
 .cc0-chip{display:inline-flex;align-items:center;margin-left:7px;padding:2px 5px;border:1px solid currentColor;border-radius:999px;font:800 6px/1 Arial,sans-serif;letter-spacing:.7px;vertical-align:2px;opacity:.72}
+.local-chip{display:inline-flex;align-items:center;margin-left:7px;padding:2px 5px;border:1px solid #376a86;border-radius:999px;background:#e2f1f8;color:#28566f;font:850 6px/1 Arial,sans-serif;letter-spacing:.7px;vertical-align:2px}
+.crate-top-actions{display:flex;align-items:center;justify-content:flex-end;gap:9px}.crate-top-actions .micro-label{max-width:110px}.my-music-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 18px 12px;padding:9px 10px;border:1px dashed #aeb8b4;border-radius:7px;background:#f0f5f2;font-size:8px}.my-music-bar span{font-weight:850;letter-spacing:.45px}.my-music-bar b{display:inline-block;min-width:18px;text-align:center;background:var(--ink);color:var(--paper);border-radius:999px;padding:2px 5px;margin-left:4px}.my-music-bar small{font-size:7px;color:var(--muted);text-align:right}@media(max-width:560px){.crate-top{align-items:flex-start}.crate-top-actions{flex-direction:column;align-items:flex-end}.my-music-bar{align-items:flex-start}.my-music-bar small{max-width:150px}}
 .track-origin{display:flex;align-items:center;gap:8px;margin:-3px 0 11px;font-size:9px;font-weight:800;letter-spacing:.45px;color:var(--muted)}
 .license-pill{display:inline-flex;align-items:center;padding:4px 7px;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);background:var(--green);font-size:7px;letter-spacing:.8px}
 .external-audio-tools{margin:8px 0 13px;padding:10px 11px;border:1.5px dashed #a5aa9d;border-radius:9px;background:rgba(255,255,255,.42);font-size:8px;line-height:1.5;color:var(--muted)}
@@ -184,7 +186,9 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
 <div class="record-tip"><span aria-hidden="true">✦</span><p id="feature-tip">Headphones on. Shoulders down.<br/>Let the rhythm do the rest.</p></div>
 </article>
 <section aria-labelledby="crate-heading" class="track-crate">
-<div class="crate-top"><h2 id="crate-heading">The record crate <span id="crate-track-count">28</span></h2><span class="micro-label" id="crate-type-label">ORIGINALS + VERIFIED CC0</span></div>
+<div class="crate-top"><h2 id="crate-heading">The record crate <span id="crate-track-count">28</span></h2><div class="crate-top-actions"><button class="mini-action" data-action="import-local-song">＋ Add local song</button><span class="micro-label" id="crate-type-label">ORIGINALS + VERIFIED CC0</span></div></div>
+<div class="my-music-bar"><span>MY MUSIC <b id="local-track-count">0</b></span><small>Your audio file stays in this browser. BeatCraft stores no commercial audio on GitHub.</small></div>
+<input accept="audio/*,.wav,.ogg,.mp3,.flac,.m4a" hidden="" id="local-song-file" type="file"/>
 <div class="search-row"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 5 5"></path></svg><input aria-label="Search tracks by name or genre" autocomplete="off" id="track-search" placeholder="Find your next track…" type="search"/></div>
 <div aria-label="Choose a track" class="track-list" id="track-list"></div>
 <div class="crate-bottom"><span><i class="offline-dot"></i> AUDIO LOADS ONLY WHEN YOU PLAY IT.</span><span id="crate-progress">0 / 84 CHARTS CLEARED</span></div>
@@ -302,7 +306,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
 <div class="collection-foot">Levels are cosmetic. Songs never unlock through grinding. Practice and autoplay never change progression.</div>
 </section>
 </main>
-<footer class="app-footer"><span>BEATCRAFT <b>3</b> / v3.0.1 · CC0 TIMING HOTFIX</span><span id="footer-catalog">28 TRACKS · 84 CHARTS · CORE 18 · v3.0.1</span></footer>
+<footer class="app-footer"><span>BEATCRAFT <b>3</b> / v3.1.0 · MY MUSIC</span><span id="footer-catalog">28 TRACKS · 84 CHARTS · 0 LOCAL · v3.1.0</span></footer>
 </div>
 <dialog aria-labelledby="settings-heading" id="settings-dialog"><div class="dialog-heading"><div><span class="eyebrow">TUNE YOUR INSTRUMENT</span><h2 id="settings-heading">Your setup.</h2></div><button aria-label="Close settings" class="icon-button" data-close="">×</button></div><div class="settings-body">
 <section class="settings-section"><h3>Sound desk</h3><label class="range-label">Master volume <output id="volume-value"></output><input id="setting-volume" max="100" min="0" step="1" type="range"/></label><label class="range-label">Music <output id="music-value"></output><input id="setting-music" max="100" min="0" step="1" type="range"/></label><label class="range-label">Tap feedback <output id="sfx-value"></output><input id="setting-sfx" max="100" min="0" step="1" type="range"/></label></section>
@@ -58281,6 +58285,22 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   function rng(seed) { let a = seed >>> 0; return () => { a += 0x6D2B79F5; let t = Math.imul(a ^ a >>> 15, 1 | a); t ^= t + Math.imul(t ^ t >>> 7, 61 | t); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
   const midiHz = n => 440 * 2 ** ((n - 69) / 12);
   const trackById = id => TRACKS.find(t => t.id === Number(id)) || TRACKS[0];
+  const LOCAL_TRACK_MIN_ID = 1000;
+  function normalizeLocalTrack(input={}) {
+    const id=Math.floor(finite(Number(input.id),0));
+    if(id<LOCAL_TRACK_MIN_ID||id>999999999)throw new Error('Local song ID is outside the reserved range.');
+    const title=String(input.title||'Local song').trim().slice(0,140)||'Local song',artist=String(input.artist||'').trim().slice(0,140);
+    const bpm=clamp(finite(Number(input.bpm),120),40,240),durationMs=Math.round(clamp(finite(Number(input.durationMs),60000),1000,21600000));
+    const bars=Math.max(1,Math.min(4096,Math.ceil(finite(Number(input.bars),durationMs/(240000/bpm)))));
+    return {id,title,artist,genre:String(input.genre||'My Music').trim().slice(0,80)||'My Music',mood:String(input.mood||'Private local import. Audio stays in this browser.').trim().slice(0,220),bpm,bars,durationMs,root:clamp(Math.floor(finite(Number(input.root),60)),36,84),minor:input.minor===true,color:String(input.color||'#86a9c6').slice(0,20),accent:String(input.accent||'#f8ce47').slice(0,20),shape:String(input.shape||'wave').slice(0,24),wave:'sine',sourceType:'local',localOnly:true,dailyEligible:false,verified:false,license:'Local file',fileName:String(input.fileName||'').slice(0,260),localIdentity:String(input.localIdentity||'').slice(0,160),importedAt:String(input.importedAt||new Date().toISOString()).slice(0,40),audio:{kind:'external',clipStartMs:0,beatOffsetMs:0,acceptedSources:[]}};
+  }
+  function registerLocalTrack(input={}) {
+    const track=normalizeLocalTrack(input),index=TRACKS.findIndex(t=>t.id===track.id);
+    if(index>=0&&TRACKS[index].sourceType!=='local')throw new Error('That local song ID conflicts with the built-in catalog.');
+    if(index>=0)TRACKS[index]=track;else TRACKS.push(track);return track;
+  }
+  function unregisterLocalTrack(id) {const index=TRACKS.findIndex(t=>t.id===Number(id)&&t.sourceType==='local');if(index<0)return false;TRACKS.splice(index,1);return true;}
+  function localTracks(){return TRACKS.filter(t=>t.sourceType==='local');}
   function catalogCurationAudit(){
     const active=SYNTH_TRACKS.map(t=>({id:t.id,catalogNumber:t.catalogNumber,title:t.title,genre:t.genre,bpm:t.bpm}));
     const retired=RETIRED_SYNTH_TRACKS.map(t=>({id:t.id,title:t.title,genre:t.genre,reason:CATALOG_CURATION.decisions[t.id]?.reason||'retired'}));
@@ -59609,7 +59629,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     return { median: Math.round(median), spread: Math.round(spread), count: deltas.length };
   }
   return { VERSION, COLORS, WINDOWS, WEIGHTS, DIFFICULTIES, TRACKS, SYNTH_TRACKS, RETIRED_SYNTH_TRACKS, CATALOG_CURATION, catalogCurationAudit, DEFAULT_SETTINGS, ACHIEVEMENTS, MASTERY_LEVELS, masteryLevel, masteryPoints, xpForLevel, levelProgress, levelTitle, dailyStreakSummary,
-    clamp, finite, hash, rng, midiHz, trackById, scaleMidi, musicIdentity, melodyProfile, melodyPhrase, melodyHookFingerprint, melodySimilarity, melodyAudit, sectionPlan, sectionInfo, musicSection, harmonyDegree, harmony, motifFor, melodyPitch, melodySteps, bassPitch, identitySignature, identitySimilarity, songIdentityAudit, sectionName, MUSIC_MAP_DIFFICULTY, CHART_CALIBRATION, audioLandmarks, makeMusicIntegratedChart, calibrateMusicIntegratedChart, chartPlaytestMetrics, chartCalibrationAudit, musicIntegrationMetrics, makeChart, legacyMakeChart, sliceChart, tutorialChart,
+    clamp, finite, hash, rng, midiHz, trackById, LOCAL_TRACK_MIN_ID, normalizeLocalTrack, registerLocalTrack, unregisterLocalTrack, localTracks, scaleMidi, musicIdentity, melodyProfile, melodyPhrase, melodyHookFingerprint, melodySimilarity, melodyAudit, sectionPlan, sectionInfo, musicSection, harmonyDegree, harmony, motifFor, melodyPitch, melodySteps, bassPitch, identitySignature, identitySimilarity, songIdentityAudit, sectionName, MUSIC_MAP_DIFFICULTY, CHART_CALIBRATION, audioLandmarks, makeMusicIntegratedChart, calibrateMusicIntegratedChart, chartPlaytestMetrics, chartCalibrationAudit, musicIntegrationMetrics, makeChart, legacyMakeChart, sliceChart, tutorialChart,
     BCMAP_VERSION, MAP_STATUSES, AUTHORSHIP_TYPES, OFFICIAL_PACKS, DIFFICULTY_GUIDES, normalizeTimingPoints, timingSegments, beatAtTime, timeAtBeat, snapTime, barAtTime, timeAtBar, chartBars, createBCMap, validateBCMap, chartFromBCMap, serializeBCMap, chartToDifficulty, chartMetrics, assessDifficulty, estimateTempo, playtestHotspots, officialPackForTrack, chartPatternMetrics, assessOfficialChart, acceptedRecording, officialPackStatus, officialPackProductionQueue, PHASE17_HUMAN_GATES, mergeEvidenceRanges, auditionEvidence, humanReviewCurrent, cleanHumanPlaytest, recordingLockedDifficulties, refineDifficultyFromAnalysis, verificationChecklist,
     gradeFor, rankFor, starsFor, Session, defaultSave, sanitizeSave, recordKey, saveResult, localDate, dailyChallenge, timingSummary, validKey };
 });
@@ -61019,9 +61039,9 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   'use strict';
   const C=root.BeatCore,A=root.BeatAudio;
   const MANIFEST=Object.freeze({
-    product:'BeatCraft 3',release:'3.0.1',phase:18,catalog:'core-18-v1',saveSchema:C.VERSION,
+    product:'BeatCraft 3',release:'3.1.0',phase:19,catalog:'core-18-v1',saveSchema:C.VERSION,
     playableTracks:28,coreTracks:18,verifiedCC0Tracks:10,retiredOriginals:6,chartSlots:84,coreGeneratedCharts:54,officialPackSlots:30,
-    scope:Object.freeze({core:'release-frozen',officialPack:'human-certification-required',subjectiveMusicAudit:'human-listening-required',subjectiveChartPlaytest:'human-playtest-required',releaseHardening:'phase18-complete'})
+    scope:Object.freeze({core:'release-frozen',officialPack:'human-certification-required',subjectiveMusicAudit:'human-listening-required',subjectiveChartPlaytest:'human-playtest-required',releaseHardening:'phase18-complete',localMusic:'user-supplied-audio-only'})
   });
   const groupTimes=chart=>new Set((chart?.notes||[]).map(n=>Math.round(Number(n.musicSourceTime??n.time)||0)));
   const subset=(a,b)=>[...a].every(x=>b.has(x));
@@ -61034,7 +61054,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   }
   function audit(){
     const checks=[],push=(id,ok,detail)=>checks.push({id,ok:!!ok,detail});
-    const tracks=C.TRACKS||[],core=C.SYNTH_TRACKS||[],retired=C.RETIRED_SYNTH_TRACKS||[],ids=tracks.map(t=>t.id);
+    const allTracks=C.TRACKS||[],tracks=allTracks.filter(t=>t.sourceType!=='local'),core=C.SYNTH_TRACKS||[],retired=C.RETIRED_SYNTH_TRACKS||[],ids=tracks.map(t=>t.id);
     push('catalog-counts',tracks.length===MANIFEST.playableTracks&&core.length===MANIFEST.coreTracks&&retired.length===MANIFEST.retiredOriginals,{tracks:tracks.length,core:core.length,retired:retired.length});
     push('unique-track-ids',new Set(ids).size===ids.length,{unique:new Set(ids).size,total:ids.length});
     push('curation-frozen',C.CATALOG_CURATION?.frozen===true&&C.catalogCurationAudit().activeTracks===18,C.catalogCurationAudit());
@@ -61093,7 +61113,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     push('phase17-human-certification-integrity',phase17Integrity,{auditionCoverageRequired:C.PHASE17_HUMAN_GATES?.auditionCoverageRequired,reviewCriteria:C.PHASE17_HUMAN_GATES?.reviewCriteria?.length,gates:phase17Ids,seedCannotAutoVerify:!phase17Check?.ok});
     const phase18RootRefs=[...document.querySelectorAll('[src],[href]')].map(node=>node.getAttribute('src')||node.getAttribute('href')||'').filter(value=>/^\/(?!\/)/.test(value));
     const phase18Hardening={
-      releaseFrozen:MANIFEST.release==='3.0.1'&&MANIFEST.phase===18&&MANIFEST.scope.releaseHardening==='phase18-complete',
+      releaseFrozen:MANIFEST.release==='3.1.0'&&MANIFEST.phase===19&&MANIFEST.scope.releaseHardening==='phase18-complete',
       githubPagesRelativePaths:phase18RootRefs.length===0,
       manifestLinked:document.querySelector('link[rel="manifest"]')?.getAttribute('href')==='./manifest.webmanifest',
       browserBackupPrimitives:typeof Blob==='function'&&typeof URL==='function'&&typeof URL.createObjectURL==='function',
@@ -61103,6 +61123,8 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     const syntheticOnsets=Array.from({length:64},(_,i)=>({time:250+i*250,strength:i%4===0?.95:i%2===0?.68:.38})),syntheticLock=C.recordingLockedDifficulties({tempo:{bpm:120,offset:0,confidence:1},onsets:syntheticOnsets,sections:[]},16250,120),sourceTimes=new Set(syntheticOnsets.map(o=>o.time));
     const rushTimes=new Set(syntheticLock.rush.notes.map(n=>n.t)),flowTimes=new Set(syntheticLock.flow.notes.map(n=>n.t)),chillTimes=new Set(syntheticLock.chill.notes.map(n=>n.t));
     push('cc0-recording-locked-mapping',[...rushTimes].every(t=>sourceTimes.has(t))&&[...flowTimes].every(t=>rushTimes.has(t))&&[...chillTimes].every(t=>flowTimes.has(t))&&chillTimes.size>0,{sourceOnsets:sourceTimes.size,chill:chillTimes.size,flow:flowTimes.size,rush:rushTimes.size,allNotesOnDetectedAttacks:[...rushTimes].every(t=>sourceTimes.has(t)),nested:[...flowTimes].every(t=>rushTimes.has(t))&&[...chillTimes].every(t=>flowTimes.has(t))});
+    const localMusicFoundation=typeof C.registerLocalTrack==='function'&&typeof C.unregisterLocalTrack==='function'&&typeof C.localTracks==='function'&&C.LOCAL_TRACK_MIN_ID===1000&&typeof A.AudioEngine.prototype.saveLocalBlob==='function'&&typeof A.AudioEngine.prototype.getLocalBlob==='function';
+    push('phase19-local-music',localMusicFoundation,{registry:typeof C.registerLocalTrack==='function',unregister:typeof C.unregisterLocalTrack==='function',localList:typeof C.localTracks==='function',reservedId:C.LOCAL_TRACK_MIN_ID,indexedDbAudio:typeof A.AudioEngine.prototype.saveLocalBlob==='function'});
     const pack=C.officialPackStatus(seed,C.OFFICIAL_PACKS[0]);
     const automatedPass=checks.every(x=>x.ok),officialPackHumanReady=pack.verified===pack.slots;
     return {manifest:MANIFEST,automatedPass,coreReleaseCandidate:automatedPass,fullCatalogHumanCertified:automatedPass&&officialPackHumanReady&&quality.requiresListening===0,checks,coreCharts:chartRows.filter(x=>x.difficulty!=='nested'),subjectiveAudit:{tracks:quality.tracks,requiresListening:quality.requiresListening},officialPack:{tracks:pack.tracks,slots:pack.slots,verified:pack.verified,reviewed:pack.reviewed,auditioned:pack.auditioned,timed:pack.timed,acceptedTracks:pack.acceptedTracks,humanCertificationComplete:officialPackHumanReady}};
@@ -61122,7 +61144,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   const keyLabel = code => ({ ArrowLeft: '←', ArrowRight: '→', ArrowUp: '↑', ArrowDown: '↓', Semicolon: ';', Quote: "'", Comma: ',', Period: '.', Slash: '/', BracketLeft: '[', BracketRight: ']' }[code] || code.replace(/^(Key|Digit)/, ''));
   const CONTROL_PRESETS = Object.freeze({ dfjk:['KeyD','KeyF','KeyJ','KeyK'], asdf:['KeyA','KeyS','KeyD','KeyF'], jklsemi:['KeyJ','KeyK','KeyL','Semicolon'], arrows:['ArrowLeft','ArrowDown','ArrowUp','ArrowRight'] });
   const ariaShortcut = code => code.startsWith('Key') ? code.slice(3) : code.startsWith('Digit') ? code.slice(5) : code;
-  const STORAGE_KEY = 'beatcraft.v2', BACKUP_KEY = 'beatcraft.v2.backup', MAPS_KEY = 'beatcraft.maps.v1', MAPS_BACKUP_KEY = 'beatcraft.maps.v1.backup', ONBOARDING_KEY = 'beatcraft.onboarding.v1';
+  const STORAGE_KEY = 'beatcraft.v2', BACKUP_KEY = 'beatcraft.v2.backup', MAPS_KEY = 'beatcraft.maps.v1', MAPS_BACKUP_KEY = 'beatcraft.maps.v1.backup', LOCAL_TRACKS_KEY = 'beatcraft.local-tracks.v1', ONBOARDING_KEY = 'beatcraft.onboarding.v1';
   let storageOK = true, recovered = false;
   function loadSave() {
     try {
@@ -61141,17 +61163,27 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
       return clean;
     } catch (_) { storageOK = false; return C.defaultSave(); }
   }
-  function sanitizeStoredMaps(raw) {
-    const out = {};
-    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return out;
-    for (const [id, value] of Object.entries(raw)) {
-      const track = C.trackById(Number(id));
-      if (!track || track.id !== Number(id)) continue;
-      const checked = C.validateBCMap(value, track);
-      if (checked.ok) out[id] = checked.map;
+  function sanitizeStoredMaps(raw, extraTracks=[]) {
+    const out={},extras=new Map((Array.isArray(extraTracks)?extraTracks:[]).map(t=>[Number(t.id),t]));
+    if(!raw||typeof raw!=='object'||Array.isArray(raw))return out;
+    for(const [id,value] of Object.entries(raw)){
+      const numeric=Number(id),track=extras.get(numeric)||C.TRACKS.find(t=>t.id===numeric);
+      if(!track||track.id!==numeric)continue;
+      const checked=C.validateBCMap(value,track);if(checked.ok)out[id]=checked.map;
     }
     return out;
   }
+  function localTrackMetadata(track) {
+    return {id:track.id,title:track.title,artist:track.artist||'',genre:track.genre||'My Music',mood:track.mood||'',bpm:track.bpm,bars:track.bars,durationMs:track.durationMs||Math.round(track.bars*240000/track.bpm),root:track.root,minor:track.minor===true,color:track.color,accent:track.accent,shape:track.shape,fileName:track.fileName||'',localIdentity:track.localIdentity||'',importedAt:track.importedAt||''};
+  }
+  function loadLocalTrackCatalog() {
+    try {const raw=JSON.parse(localStorage.getItem(LOCAL_TRACKS_KEY)||'[]');if(Array.isArray(raw))for(const item of raw.slice(0,200)){try{C.registerLocalTrack(item);}catch(_){}}} catch (_) {}
+  }
+  function persistLocalTrackCatalog() {
+    try {localStorage.setItem(LOCAL_TRACKS_KEY,JSON.stringify(C.localTracks().map(localTrackMetadata)));storageOK=true;}catch(_){storageOK=false;}
+  }
+  loadLocalTrackCatalog();
+
   function loadMaps() {
     try { return sanitizeStoredMaps(JSON.parse(localStorage.getItem(MAPS_KEY) || '{}')); }
     catch (_) {
@@ -61312,12 +61344,13 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     $('profile-chip').innerHTML = `LV. ${String(p.level).padStart(2, '0')} <span>${escapeHTML(p.title.toUpperCase())}</span>`;
   }
   function renderTrackList() {
-    const query = $('track-search').value.trim().toLowerCase();
-    const tracks = C.TRACKS.filter(t => `${t.title} ${t.artist || ''} ${t.genre}`.toLowerCase().includes(query));
-    $('track-list').innerHTML = tracks.length ? tracks.map(t => {
-      const record = save.records[C.recordKey(t.id, save.difficulty)], selected = save.selected === t.id;
-      return `<button class="track-row${selected ? ' selected' : ''}" data-track="${t.id}" aria-pressed="${selected}" aria-label="${t.title}, ${t.bpm} beats per minute${record ? ', best ' + fmt(record.score) : ''}"><span class="track-number">${selected ? '▶' : String(t.sourceType === 'cc0' ? (t.id - 24) : (t.catalogNumber || t.id)).padStart(2, '0')}</span><span class="track-thumb">${cover(t, true)}</span><span><span class="track-row-title">${t.title}${t.sourceType === 'cc0' ? '<span class=\"cc0-chip\">CC0</span>' : ''}${hasAuthoredDifficulty(t, save.difficulty) ? '<span class=\"mapper-note-chip\">MAP</span>' : ''}</span><span class="track-row-meta">${t.artist ? escapeHTML(t.artist) + ' · ' : ''}${t.genre} · ${t.bpm} BPM · ${timeLabel(t.bars * 240000 / t.bpm)}</span></span><span class="track-row-score"><b>${record ? C.rankFor(record.accuracy) : selected ? '▶' : '—'}</b><span class="tiny-stars" aria-label="${record?.stars || 0} stars">${[1, 2, 3].map(i => `<span class="${i <= (record?.stars || 0) ? 'lit' : ''}">★</span>`).join('')}</span></span></button>`;
-    }).join('') : '<div class="empty-state">No matching tracks. Try a title or genre.</div>';
+    const query=$('track-search').value.trim().toLowerCase(),tracks=C.TRACKS.filter(t=>`${t.title} ${t.artist||''} ${t.genre}`.toLowerCase().includes(query));
+    $('track-list').innerHTML=tracks.length?tracks.map(t=>{
+      const record=save.records[C.recordKey(t.id,save.difficulty)],selected=save.selected===t.id,duration=t.durationMs||t.bars*240000/t.bpm;
+      const number=t.sourceType==='local'?'♪':t.sourceType==='cc0'?String(t.id-24).padStart(2,'0'):String(t.catalogNumber||t.id).padStart(2,'0');
+      const chips=`${t.sourceType==='cc0'?'<span class="cc0-chip">CC0</span>':''}${t.sourceType==='local'?'<span class="local-chip">LOCAL</span>':''}${hasAuthoredDifficulty(t,save.difficulty)?'<span class="mapper-note-chip">MAP</span>':''}`;
+      return `<button class="track-row${selected?' selected':''}" data-track="${t.id}" aria-pressed="${selected}" aria-label="${escapeHTML(t.title)}, ${Math.round(t.bpm)} beats per minute${record?', best '+fmt(record.score):''}"><span class="track-number">${selected?'▶':number}</span><span class="track-thumb">${cover(t,true)}</span><span><span class="track-row-title">${escapeHTML(t.title)}${chips}</span><span class="track-row-meta">${t.artist?escapeHTML(t.artist)+' · ':''}${escapeHTML(t.genre)} · ${Math.round(t.bpm)} BPM · ${timeLabel(duration)}</span></span><span class="track-row-score"><b>${record?C.rankFor(record.accuracy):selected?'▶':'—'}</b><span class="tiny-stars" aria-label="${record?.stars||0} stars">${[1,2,3].map(i=>`<span class="${i<=(record?.stars||0)?'lit':''}">★</span>`).join('')}</span></span></button>`;
+    }).join(''):'<div class="empty-state">No matching tracks. Try a title, artist, or genre.</div>';
   }
   async function renderOfficialPack() {
     const pack=C.OFFICIAL_PACKS[0]; if(!pack)return;
@@ -61350,7 +61383,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     save.difficulty=next.difficulty;persist();openMapper(next.trackId);mapper.difficulty=next.difficulty;ensureMapperMap();refreshMapperUI();mapperMessage(`${next.title} · ${next.difficulty.toUpperCase()} · next human gate: ${next.gate.toUpperCase()}. ${phase17GateInstruction(next.gate)}`,'warn');
   }
   function phase17EvidenceBundle(){
-    const pack=C.OFFICIAL_PACKS[0],out={format:'beatcraft-official-cert-evidence',version:1,build:'3.0.1',pack:pack.id||'cc0-arcade-cuts-01',exportedAt:new Date().toISOString(),maps:{}};
+    const pack=C.OFFICIAL_PACKS[0],out={format:'beatcraft-official-cert-evidence',version:1,build:'3.1.0',pack:pack.id||'cc0-arcade-cuts-01',exportedAt:new Date().toISOString(),maps:{}};
     for(const id of pack.trackIds){const track=C.trackById(id),map=localMapForTrack(track)||mapForTrack(track);if(map)out.maps[String(id)]=map;}return out;
   }
   function phase17ExportEvidence(){const bundle=phase17EvidenceBundle();downloadText(`beatcraft-phase17-evidence-${C.localDate()}.json`,JSON.stringify(bundle,null,2),'application/json');toast(`Exported evidence for ${Object.keys(bundle.maps).length} Official Pack tracks.`);}
@@ -61393,49 +61426,79 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     text('selected-best', r ? `${fmt(r.score)} · ${r.accuracy.toFixed(1)}%` : 'Set your first score');
   }
   async function refreshAudioStatus(track) {
-    const tools = $('external-audio-tools');
-    if (!tools) return;
-    const external = track?.audio?.kind === 'external';
-    tools.hidden = !external;
-    $('feature-origin').hidden = !external;
-    if (!external) return;
-    text('feature-artist', track.artist || 'Unknown artist');
-    text('feature-license', track.license || 'CC0');
-    const link = $('feature-source-link');
-    link.href = track.sourcePage || track.licenseUrl || '#';
-    const locallyInstalled = await audio.installedLocally(track);
-    if (save.selected !== track.id) return;
-    const remoteConfigured = !!audio.externalURL(track), mirrorReady = !!track.audio?.fallbackUrl;
-    const loadedOrigin = audio.originFor(track), detail = audio.detailsFor(track);
-    text('external-audio-status', detail?.accepted ? `Exact approved recording loaded · ${detail.sourceLabel}` : loadedOrigin === 'local' || locallyInstalled ? 'Audio installed locally · identity will be checked in Beatmap Studio' : loadedOrigin === 'remote' ? 'Recording loaded · identity is not on the approved source list' : mirrorReady && !window.BEATCRAFT_CONFIG?.audioBase ? 'Verified CC0 mirror ready · loads on demand' : remoteConfigured ? 'Remote audio configured · loads on demand' : 'Audio not installed · attach the CC0 file');
-    $('remove-audio-button').hidden = !(locallyInstalled || loadedOrigin === 'local');
+    const tools=$('external-audio-tools');if(!tools)return;
+    const external=track?.audio?.kind==='external',local=track?.sourceType==='local';tools.hidden=!external;$('feature-origin').hidden=!external;if(!external)return;
+    text('feature-artist',track.artist||(local?'Local import':'Unknown artist'));text('feature-license',local?'LOCAL':(track.license||'CC0'));
+    const link=$('feature-source-link');link.hidden=local;if(!local)link.href=track.sourcePage||track.licenseUrl||'#';
+    const locallyInstalled=await audio.installedLocally(track);if(save.selected!==track.id)return;
+    const loadedOrigin=audio.originFor(track),detail=audio.detailsFor(track),attach=tools.querySelector('[data-action="attach-audio"]'),remove=$('remove-audio-button');
+    if(attach)attach.textContent=local?(locallyInstalled?'Replace local audio':'Reattach local audio'):'Attach audio file';remove.textContent=local?'Remove local song':'Remove local audio';
+    if(local){text('external-audio-status',locallyInstalled||loadedOrigin==='local'?'Private local song · audio stored only in this browser':'Local song metadata is here, but its audio file must be reattached on this device.');remove.hidden=false;return;}
+    const remoteConfigured=!!audio.externalURL(track),mirrorReady=!!track.audio?.fallbackUrl;
+    text('external-audio-status',detail?.accepted?`Exact approved recording loaded · ${detail.sourceLabel}`:loadedOrigin==='local'||locallyInstalled?'Audio installed locally · identity will be checked in Beatmap Studio':loadedOrigin==='remote'?'Recording loaded · identity is not on the approved source list':mirrorReady&&!window.BEATCRAFT_CONFIG?.audioBase?'Verified CC0 mirror ready · loads on demand':remoteConfigured?'Remote audio configured · loads on demand':'Audio not installed · attach the CC0 file');
+    remove.hidden=!(locallyInstalled||loadedOrigin==='local');
   }
   async function attachSelectedAudio(file) {
-    const track = C.trackById(save.selected);
-    if (!file || track.audio?.kind !== 'external') return;
-    toast(`Importing ${track.title}…`, 6000);
-    try {
-      const ok = await audio.attachTrackFile(track, file);
-      if (!ok) throw new Error('Audio could not be decoded.');
-      await refreshAudioStatus(track);
-      toast(`${track.title} is ready. The file is stored locally in this browser.`);
-    } catch (error) {
-      console.warn(error);
-      toast('That audio file could not be used. Try the WAV, OGG, or MP3 from the verified source.', 6000);
-    } finally {
-      $('track-audio-file').value = '';
-    }
+    const track=C.trackById(save.selected);if(!file||track.audio?.kind!=='external')return;toast(`Importing ${track.title}…`,6000);
+    try{
+      const ok=await audio.attachTrackFile(track,file);if(!ok)throw new Error('Audio could not be decoded.');
+      if(track.sourceType==='local'){
+        const repaired=await ensureRecordingLockedMapForPlay(track,save.difficulty);
+        const detail=audio.detailsFor(track),buffer=audio.bufferFor(track);
+        if(detail&&buffer){C.registerLocalTrack({...track,fileName:file.name,localIdentity:detail.identity,durationMs:Math.round(buffer.duration*1000)});persistLocalTrackCatalog();}
+        if(repaired)toast(`${track.title} audio replaced and its charts were rebuilt from the new recording.`,4200);
+      }
+      await refreshAudioStatus(C.trackById(track.id));if(track.sourceType!=='local')toast(`${track.title} is ready. The file is stored locally in this browser.`);
+    }catch(error){console.warn(error);toast(track.sourceType==='local'?'That local song could not be decoded. Try a browser-supported WAV, OGG, MP3, M4A, or FLAC file.':'That audio file could not be used. Try the WAV, OGG, or MP3 from the verified source.',6500);}
+    finally{$('track-audio-file').value='';}
+  }
+
+  function parseLocalSongFilename(name='') {
+    const base=String(name).replace(/.[^.]+$/,'').replace(/_/g,' ').replace(/s+/g,' ').trim()||'Local song',parts=base.split(/s+[-–—]s+/).filter(Boolean);
+    if(parts.length>=2)return{artist:parts.shift().slice(0,140),title:parts.join(' - ').slice(0,140)};return{artist:'',title:base.slice(0,140)};
+  }
+  function nextLocalTrackId(){return Math.max(C.LOCAL_TRACK_MIN_ID-1,...C.localTracks().map(t=>t.id))+1;}
+  async function importLocalSong(file) {
+    if(!file)return;const input=$('local-song-file');let track=null;
+    try{
+      if(file.size>350*1024*1024)throw new Error('This audio file is larger than 350 MB. Use a compressed local copy.');
+      if(!await audio.ensure())throw new Error('Audio decoding is unavailable in this browser.');
+      const id=nextLocalTrackId(),parsed=parseLocalSongFilename(file.name);
+      track=C.registerLocalTrack({id,title:parsed.title,artist:parsed.artist,genre:'My Music',mood:'Private local import. Audio stays in this browser.',bpm:120,bars:64,durationMs:60000,fileName:file.name,root:57+(id%12),minor:false,importedAt:new Date().toISOString()});
+      toast(`Analyzing ${track.title} locally…`,8000);
+      const ok=await audio.attachTrackFile(track,file);if(!ok)throw new Error('The browser could not decode this audio file.');
+      const buffer=audio.bufferFor(track),detail=audio.detailsFor(track);if(!buffer)throw new Error('The decoded audio buffer is unavailable.');
+      const durationMs=Math.round(buffer.duration*1000),analysis=mapperAudioAnalysis(buffer,track,durationMs);if(!analysis.onsets?.length||analysis.onsets.length<8)throw new Error('Not enough rhythmic attacks were detected to create a useful chart.');
+      const locked=C.recordingLockedDifficulties(analysis,durationMs,120);if(!locked.chill.notes.length||!locked.flow.notes.length||!locked.rush.notes.length)throw new Error('BeatCraft could not derive all three difficulties from this recording.');
+      const bars=Math.max(4,Math.min(4096,Math.ceil(durationMs/(240000/locked.bpm))));
+      track=C.registerLocalTrack({...track,bpm:locked.bpm,bars,durationMs,fileName:file.name,localIdentity:detail?.identity||'',importedAt:new Date().toISOString()});
+      const map=seedMap(track),now=new Date().toISOString(),identity=detail?.identity||`local:${id}:${durationMs}`;
+      map.audio.durationMs=durationMs;map.audio.reference=null;map.timing.points=[{time:locked.offset,bpm:locked.bpm,meter:4}];
+      map.analysis={bpmEstimate:locked.bpm,offsetEstimate:locked.offset,confidence:locked.confidence,analyzedAt:now,recordingAnalyzed:true,recordingDurationMs:durationMs,recordingOrigin:'local',recordingIdentity:identity,recordingSourceLabel:file.name,recordingAnalyzedAt:now,sections:analysis.sections,onsets:analysis.onsets};
+      for(const d of C.DIFFICULTIES){const diff=map.difficulties[d.id],result=locked[d.id];diff.notes=result.notes.map(n=>({...n}));diff.meta={...(diff.meta||{}),status:'mapped',revision:1,authorship:'assisted',mappingBasis:'recording-onsets',waveformRefined:true,refinementRevision:1,refinementRecordingIdentity:identity,refinedAt:now,refinementStats:result.stats,verifiedAt:'',playtests:[],humanReviewed:false,productionNote:'Generated locally from detected attacks in the user-supplied recording. Audio remains in this browser.'};}
+      map.meta={...(map.meta||{}),mapper:'BeatCraft Local Music',status:'mapped',timingConfirmed:false,timingSource:'recording-analysis-local',timingConfirmedAt:'',localMusic:true,localImportVersion:1,runtimeAudioLockVersion:4,runtimeRecordingIdentity:identity,runtimeAlignedAt:now,updated:now};
+      const checked=C.validateBCMap(map,track);if(!checked.ok)throw new Error(checked.errors.join(' '));
+      maps[String(id)]=checked.map;persistMaps();persistLocalTrackCatalog();save.selected=id;save.difficulty='flow';persist();updateLibrary();showView('library',false);
+      toast(`Added ${track.title} to My Music · ${Math.round(locked.bpm)} BPM · ${locked.flow.notes.length} Flow notes.`,6000);
+    }catch(error){console.warn(error);if(track?.id){await audio.removeLocalBlob(track.id);delete maps[String(track.id)];C.unregisterLocalTrack(track.id);persistMaps();persistLocalTrackCatalog();}toast(`Local song import failed: ${error.message}`,7500);}
+    finally{if(input)input.value='';}
+  }
+  async function deleteLocalSong(track) {
+    if(track?.sourceType!=='local')return;const id=track.id;stopPreview();stopRun();await audio.removeLocalBlob(id);delete maps[String(id)];C.unregisterLocalTrack(id);
+    for(const key of Object.keys(save.records))if(key.startsWith(`${id}:`))delete save.records[key];save.history=save.history.filter(r=>!String(r.key||'').startsWith(`${id}:`));if(save.selected===id)save.selected=1;
+    persistMaps();persistLocalTrackCatalog();persist();updateLibrary();showView('library',false);toast('Local song removed from this browser.');
   }
   function updateLibrary(fullList = true) {
     const t = C.trackById(save.selected);
     if (!mapForTrack(t) && window.BEATCRAFT_CONFIG?.mapBase && !remoteMapAttempts.has(t.id)) ensureTrackMap(t).then(map => { if (map && ui.view === 'library' && save.selected === t.id) updateLibrary(false); });
     $('feature-art').innerHTML = cover(t); text('feature-title', t.title); text('feature-mood', t.mood);
-    text('feature-number', t.sourceType === 'cc0' ? `CC0 / ${String(t.id - 24).padStart(2, '0')}` : `CORE / ${String(t.catalogNumber || t.id).padStart(2, '0')}`);
-    text('feature-bpm', t.bpm); text('feature-duration', timeLabel(t.bars * 240000 / t.bpm)); text('feature-genre', t.genre);
+    text('feature-number', t.sourceType === 'local' ? `MY MUSIC / ${String(t.id - C.LOCAL_TRACK_MIN_ID + 1).padStart(2, '0')}` : t.sourceType === 'cc0' ? `CC0 / ${String(t.id - 24).padStart(2, '0')}` : `CORE / ${String(t.catalogNumber || t.id).padStart(2, '0')}`);
+    text('feature-bpm', Math.round(t.bpm)); text('feature-duration', timeLabel(t.durationMs || t.bars * 240000 / t.bpm)); text('feature-genre', t.genre);
     const featureMastery=$('feature-mastery'); if(featureMastery){featureMastery.innerHTML=C.DIFFICULTIES.map(d=>{const m=C.masteryLevel(save.records[C.recordKey(t.id,d.id)]);return `<span class="${m.level>=3?'mastered':''}">${d.name.toUpperCase()} · ${m.short} ${m.name}</span>`;}).join('');}
     text('crate-track-count', C.TRACKS.length);
-    text('crate-type-label', `${C.TRACKS.filter(x => x.sourceType === 'cc0').length} VERIFIED CC0 · ${C.SYNTH_TRACKS.length} CURATED ORIGINALS`);
-    text('footer-catalog', `${C.TRACKS.length} TRACKS · ${C.TRACKS.length * C.DIFFICULTIES.length} CHARTS · CORE 18 · v3.0.1`);
+    text('local-track-count', C.localTracks().length);
+    text('crate-type-label', `${C.localTracks().length} LOCAL · ${C.TRACKS.filter(x => x.sourceType === 'cc0').length} CC0 · ${C.SYNTH_TRACKS.length} CORE`);
+    text('footer-catalog', `${C.TRACKS.length} TRACKS · ${C.TRACKS.length * C.DIFFICULTIES.length} CHARTS · ${C.localTracks().length} LOCAL · v3.1.0`);
     refreshAudioStatus(t);
     $$('[data-difficulty]').forEach(b => { const selected = b.dataset.difficulty === save.difficulty; b.classList.toggle('selected', selected); b.setAttribute('aria-pressed', String(selected)); });
     $$('[data-mode]').forEach(b => { const selected = b.dataset.mode === ui.mode; b.classList.toggle('selected', selected); b.setAttribute('aria-pressed', String(selected)); });
@@ -61545,10 +61608,11 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     const track = C.trackById(save.selected);
     if (!await audio.ensure()) { toast('Sound is unavailable in this browser. You can still play visually.'); return; }
     if (track.audio?.kind === 'external' && !await audio.prepareTrack(track)) {
-      if (ticket === ui.operation) toast('This CC0 recording is not installed yet. Attach its audio file, or configure your R2 music host.', 6000);
+      if (ticket === ui.operation) toast(track.sourceType==='local'?'This local song needs its audio file reattached on this device.':'This CC0 recording is not installed yet. Attach its audio file, or configure your R2 music host.', 6000);
       return;
     }
     if (ticket !== ui.operation || ui.view !== 'library') return;
+    if(track.audio?.kind==='external'&&(C.officialPackForTrack(track)||track.sourceType==='local')){try{await ensureRecordingLockedMapForPlay(track,save.difficulty);}catch(error){toast(`Timing analysis failed: ${error.message}`,6000);return;}}
     await ensureTrackMap(track);
     if (ticket !== ui.operation || ui.view !== 'library') return;
     const chart = C.sliceChart(chartFor(track, save.difficulty), 0, 4);
@@ -61573,17 +61637,17 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     clearInputs(); audio.stop('effect'); run = null;
   }
   async function ensureRecordingLockedMapForPlay(track, difficulty='flow') {
-    if(track?.audio?.kind!=='external'||!C.officialPackForTrack(track))return false;
-    const detail=audio.detailsFor(track),buffer=audio.bufferFor(track);if(!buffer)throw new Error('The CC0 recording decoded without an audio buffer.');
+    const needsRecordingLock=!!C.officialPackForTrack(track)||track?.sourceType==='local';if(track?.audio?.kind!=='external'||!needsRecordingLock)return false;
+    const detail=audio.detailsFor(track),buffer=audio.bufferFor(track);if(!buffer)throw new Error('The recording decoded without an audio buffer.');
     const identity=detail?.identity||`${audio.originFor(track)||'audio'}:${Math.round(buffer.duration*1000)}`;
     let map=localMapForTrack(track)||mapForTrack(track)||seedMap(track),selected=map.difficulties?.[difficulty],selectedMeta=selected?.meta||{};
-    const humanLocked=selectedMeta.authorship==='human'||selectedMeta.status==='verified'||!!selectedMeta.verifiedAt;
-    const alreadyLocked=map.meta?.runtimeAudioLockVersion===3&&map.meta?.runtimeRecordingIdentity===identity&&selectedMeta.mappingBasis==='recording-onsets'&&selected?.notes?.length;
+    const humanLocked=(selectedMeta.authorship==='human'||selectedMeta.status==='verified'||!!selectedMeta.verifiedAt)&&map.analysis?.recordingIdentity===identity;
+    const alreadyLocked=map.meta?.runtimeAudioLockVersion===4&&map.meta?.runtimeRecordingIdentity===identity&&selectedMeta.mappingBasis==='recording-onsets'&&selected?.notes?.length;
     if(alreadyLocked||humanLocked)return false;
     map=JSON.parse(JSON.stringify(map));
     const clipStartMs=Math.max(0,Number(track.audio?.clipStartMs||track.audio?.beatOffsetMs||0)),usable=Math.max(1000,buffer.duration*1000-clipStartMs),duration=Math.min(Math.max(1000,Number(map.audio?.durationMs)||usable),usable);
     const previousIdentity=map.analysis?.recordingIdentity||map.audio?.acceptance?.identity||'';if(previousIdentity&&previousIdentity!==identity)invalidateAudioBoundWorkflow(map,true);
-    const analysis=mapperAudioAnalysis(buffer,track,duration);if(!analysis.onsets?.length||analysis.onsets.length<8)throw new Error('BeatCraft could not detect enough musical attacks to build a reliable CC0 chart.');
+    const analysis=mapperAudioAnalysis(buffer,track,duration);if(!analysis.onsets?.length||analysis.onsets.length<8)throw new Error('BeatCraft could not detect enough musical attacks to build a reliable recording-locked chart.');
     if(detail?.accepted){const accepted=acceptanceFromAudioDetail(track,detail);if(accepted)map.audio.acceptance=accepted;}
     map.audio.durationMs=Math.round(duration);
     const analyzedAt=new Date().toISOString(),locked=C.recordingLockedDifficulties(analysis,map.audio.durationMs,track.bpm);
@@ -61595,7 +61659,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
       const result=locked[d.id],before=diff.notes?.length||0;diff.notes=result.notes.map(n=>({...n}));
       meta.revision=(meta.revision||0)+1;meta.status='mapped';meta.authorship='assisted';meta.mappingBasis='recording-onsets';meta.waveformRefined=true;meta.refinementRevision=meta.revision;meta.refinementRecordingIdentity=identity;meta.refinedAt=analyzedAt;meta.refinementStats={...result.stats,noteCountBefore:before};meta.verifiedAt='';meta.auditionRanges=[];meta.auditionCoverageRevision=-1;meta.auditionCoverageRecordingIdentity='';meta.audioAuditioned=false;meta.auditionRevision=-1;meta.auditionRecordingIdentity='';meta.humanReviewed=false;meta.reviewRevision=-1;meta.reviewRecordingIdentity='';meta.reviewCriteria=[];meta.reviewer='';meta.reviewedAt='';meta.playtests=[];meta.productionNote='Runtime timing repair: stale auto-draft timestamps were discarded and this chart was rebuilt from beat-compatible detected attacks in the decoded recording. Human certification remains required.';
     }
-    map.meta={...(map.meta||{}),status:'mapped',timingConfirmed:false,timingConfirmedAt:'',timingRecordingIdentity:'',timingSource:'recording-analysis-runtime',runtimeAudioLockVersion:3,runtimeRecordingIdentity:identity,runtimeAlignedAt:analyzedAt,updated:analyzedAt};
+    map.meta={...(map.meta||{}),status:'mapped',timingConfirmed:false,timingConfirmedAt:'',timingRecordingIdentity:'',timingSource:'recording-analysis-runtime',runtimeAudioLockVersion:4,runtimeRecordingIdentity:identity,runtimeAlignedAt:analyzedAt,updated:analyzedAt};
     const checked=C.validateBCMap(map,track);if(!checked.ok)throw new Error(`${track.title}: repaired beatmap failed validation: ${checked.errors.join(' ')}`);
     maps[String(track.id)]=checked.map;persistMaps();if(mapper.trackId===track.id)mapper.map=checked.map;return true;
   }
@@ -61606,7 +61670,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     const track=C.trackById(config.trackId);if(config.mode!=='tutorial')await ensureTrackMap(track);if(operation!==ui.operation)return;
     const audioOK=await audio.ensure();if(operation!==ui.operation)return;if(!audioOK)toast('Audio is unavailable. The visual rhythm game still works.',5000);
     if(track.audio?.kind==='external'&&!await audio.prepareTrack(track)){if(operation!==ui.operation)return;updateLibrary();showView('library',false);toast('This CC0 track needs its audio. Use “Attach audio file”, or configure the R2 audio host.',6500);return;}
-    if(track.audio?.kind==='external'&&C.officialPackForTrack(track)){try{const repaired=await ensureRecordingLockedMapForPlay(track,config.difficulty);if(repaired)toast('CC0 chart rebuilt and locked to the actual recording.',2600);}catch(error){if(operation!==ui.operation)return;updateLibrary();showView('library',false);toast(`CC0 timing repair failed: ${error.message}`,7500);return;}}
+    if(track.audio?.kind==='external'&&(C.officialPackForTrack(track)||track.sourceType==='local')){try{const repaired=await ensureRecordingLockedMapForPlay(track,config.difficulty);if(repaired)toast(track.sourceType==='local'?'Local song chart rebuilt from this recording.':'CC0 chart rebuilt and locked to the actual recording.',2600);}catch(error){if(operation!==ui.operation)return;updateLibrary();showView('library',false);toast(`CC0 timing repair failed: ${error.message}`,7500);return;}}
     if(operation!==ui.operation)return;const chart=makeRunChart(config),transport=new Transport(audio,chart,config.rate);
     run={config,chart,transport,session:null,done:false,paused:false,raf:0,lastFrame:performance.now(),lastHUD:0,flashes:[0,0,0,0],particles:[],bursts:[],judgment:null,comboMilestone:null,sectionBurst:null,goBurst:null,lastSection:null,lastCountdown:null,shake:0,punch:0,failBurst:0,renderCursor:0,width:480,height:580,autoIndex:0,autoEvents:[],frameCount:0,chordLatch:null,perf:{windowFrames:0,longFrames:0,avgMs:16.7,lastCheck:performance.now(),stableWindows:0},performanceMode:'full'};
     const thisRun=run;run.session=new C.Session(chart,{noFail:config.mode!=='arcade'||config.demo},ev=>onJudgment(thisRun,ev));
@@ -62130,32 +62194,30 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   }
   function exportProgress() {
     persist(); persistMaps();
-    const payload = { format:'beatcraft-full-backup', version:1, build:'3.0.1', exportedAt:new Date().toISOString(), application:'BeatCraft 3', save, maps };
+    const payload = { format:'beatcraft-full-backup', version:1, build:'3.1.0', exportedAt:new Date().toISOString(), application:'BeatCraft 3', save, maps, localTracks:C.localTracks().map(localTrackMetadata) };
     downloadText(`beatcraft-backup-${C.localDate()}.json`, JSON.stringify(payload, null, 2), 'application/json');
-    toast('Full backup exported: progress, settings and authored maps.');
+    toast('Backup exported: progress, settings, maps and local-song metadata. Audio files stay on this device.');
   }
   function confirmAction(title, message, label, action) {
     text('confirm-heading', title); text('confirm-copy', message); text('confirm-action', label);
     confirmCallback = action; $('confirm-dialog').showModal();
   }
   async function importProgress(file) {
-    if (!file) return;
-    try {
-      if (file.size > 20000000) throw new Error('The backup is too large. BeatCraft backup files must be under 20 MB.');
-      const raw = JSON.parse(await file.text());
-      const modern = raw?.format === 'beatcraft-full-backup';
-      if (raw?.format && !modern) throw new Error('This backup format is not supported by BeatCraft 3.');
-      if (modern && Number(raw.version) !== 1) throw new Error('This BeatCraft backup version is not supported.');
-      if (modern && (!raw.maps || typeof raw.maps !== 'object' || Array.isArray(raw.maps))) throw new Error('This full backup does not contain a valid authored-map collection.');
-      const imported = C.sanitizeSave(modern ? raw.save : raw, true);
-      const hasMaps = modern;
-      const importedMaps = hasMaps ? sanitizeStoredMaps(raw.maps) : null;
-      if (hasMaps && Object.keys(raw.maps).length !== Object.keys(importedMaps).length) throw new Error('One or more authored maps in this backup are invalid.');
-      confirmAction('Import this backup?', `This replaces this browser's progress and settings${hasMaps ? ' plus authored maps' : ''}: ${imported.stats.plays} sessions and ${Object.keys(imported.records).length} chart records. Export your current state first if you need both copies.`, 'Replace with backup', () => {
-        ++ui.operation; stopPreview(); stopRun(); save = imported; if (hasMaps) maps = importedMaps; persist(); if (hasMaps) persistMaps(); closeDialogs(); applySettings(); updateLibrary(); renderStats(); showView('library'); toast(hasMaps ? 'Full backup imported.' : 'Legacy progress backup imported.');
+    if(!file)return;
+    try{
+      if(file.size>20000000)throw new Error('The backup is too large. BeatCraft backup files must be under 20 MB.');
+      const raw=JSON.parse(await file.text()),modern=raw?.format==='beatcraft-full-backup';
+      if(raw?.format&&!modern)throw new Error('This backup format is not supported by BeatCraft 3.');if(modern&&Number(raw.version)!==1)throw new Error('This BeatCraft backup version is not supported.');
+      if(modern&&(!raw.maps||typeof raw.maps!=='object'||Array.isArray(raw.maps)))throw new Error('This full backup does not contain a valid authored-map collection.');
+      const importedLocal=modern&&Array.isArray(raw.localTracks)?raw.localTracks.slice(0,200).map(item=>C.normalizeLocalTrack(item)):[];
+      const imported=C.sanitizeSave(modern?raw.save:raw,true);if(modern&&importedLocal.some(t=>t.id===Number(raw.save?.selected)))imported.selected=Number(raw.save.selected);
+      const hasMaps=modern,importedMaps=hasMaps?sanitizeStoredMaps(raw.maps,importedLocal):null;if(hasMaps&&Object.keys(raw.maps).length!==Object.keys(importedMaps).length)throw new Error('One or more authored maps in this backup are invalid.');
+      confirmAction('Import this backup?',`This replaces this browser's progress and settings${hasMaps?' plus authored maps':''}${importedLocal.length?` and ${importedLocal.length} local-song entr${importedLocal.length===1?'y':'ies'} (audio files must be reattached)`:''}: ${imported.stats.plays} sessions and ${Object.keys(imported.records).length} chart records.`,'Replace with backup',()=>{
+        ++ui.operation;stopPreview();stopRun();if(modern){for(const t of C.localTracks().slice())C.unregisterLocalTrack(t.id);for(const t of importedLocal)C.registerLocalTrack(t);persistLocalTrackCatalog();}
+        save=imported;if(hasMaps)maps=importedMaps;persist();if(hasMaps)persistMaps();closeDialogs();applySettings();updateLibrary();renderStats();showView('library');toast(importedLocal.length?'Backup imported. Reattach local song audio files on this device when needed.':hasMaps?'Full backup imported.':'Legacy progress backup imported.');
       });
-    } catch (error) { toast(error instanceof SyntaxError ? 'This file is not valid JSON. Choose a BeatCraft backup.' : error.message, 6000); }
-    $('import-file').value = '';
+    }catch(error){toast(error instanceof SyntaxError?'This file is not valid JSON. Choose a BeatCraft backup.':error.message,6500);}
+    $('import-file').value='';
   }
   function showCalibration() {
     ui.binding = -1; $('settings-dialog').close();
@@ -62341,8 +62403,9 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   function mapperAudioAcceptance() { const map=ensureMapperMap(); return map.audio?.acceptance || {accepted:false,identity:''}; }
   function mapperLoadedAudioDetail(track=C.trackById(mapper.trackId)) { return audio.detailsFor(track); }
   function refreshMapperAudioIdentity() {
-    const track=C.trackById(mapper.trackId), map=ensureMapperMap(track), detail=mapperLoadedAudioDetail(track), accepted=C.acceptedRecording(track,map.audio?.acceptance), box=$('mapper-audio-identity'), button=$('mapper-accept-audio');
+    const track=C.trackById(mapper.trackId),map=ensureMapperMap(track),detail=mapperLoadedAudioDetail(track),accepted=C.acceptedRecording(track,map.audio?.acceptance),box=$('mapper-audio-identity'),button=$('mapper-accept-audio'),local=track.sourceType==='local';
     if(track.audio?.kind!=='external'){box.className='audio-identity accepted';box.innerHTML='<span>RECORDING IDENTITY</span><b>BeatCraft synthesized original</b><small>No external recording acceptance is required.</small>';button.hidden=true;return;}
+    if(local){button.hidden=true;if(detail){const short=(detail.gitBlobSha1||detail.sha256||detail.identity||'').replace(/^.*:/,'').slice(0,12);box.className='audio-identity accepted';box.innerHTML=`<span>LOCAL RECORDING</span><b>${escapeHTML(track.fileName||track.title)}</b><small>${detail.byteLength.toLocaleString()} bytes${short?' · '+escapeHTML(short)+'…':''} · private browser storage</small>`;return;}box.className='audio-identity';box.innerHTML='<span>LOCAL RECORDING</span><b>Audio not loaded</b><small>Reattach your local copy to analyze or edit this song.</small>';return;}
     button.hidden=false;
     if(detail){const short=(detail.gitBlobSha1||detail.sha256||'').slice(0,12);box.className=`audio-identity ${detail.accepted?'accepted':'rejected'}`;box.innerHTML=`<span>LOADED RECORDING</span><b>${escapeHTML(detail.accepted?detail.sourceLabel:'Unrecognized recording')}</b><small>${detail.byteLength.toLocaleString()} bytes · ${short?escapeHTML(short)+'… · ':''}${detail.accepted?'approved source identity':'not on the approved identity list'}</small>`;button.disabled=!detail.accepted||(accepted&&map.audio.acceptance.identity===detail.identity);button.textContent=accepted&&map.audio.acceptance.identity===detail.identity?'Verified recording accepted ✓':'Accept verified recording';return;}
     if(accepted){const a=map.audio.acceptance;box.className='audio-identity accepted';box.innerHTML=`<span>ACCEPTED RECORDING</span><b>${escapeHTML(a.sourceLabel||'Approved CC0 recording')}</b><small>${escapeHTML((a.gitBlobSha1||a.sha256||a.identity).slice(0,12))}… · reload this same file to analyze or audition.</small>`;button.disabled=true;button.textContent='Verified recording accepted ✓';return;}
@@ -62379,7 +62442,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     refreshMapperSelectors();
     $('mapper-bpm').value = Number(first.bpm).toFixed(2).replace(/\.00$/, ''); $('mapper-offset').value = Math.round(first.time);
     $$('[data-mapper-difficulty]').forEach(b => { const selected = b.dataset.mapperDifficulty === mapper.difficulty; b.classList.toggle('selected', selected); b.setAttribute('aria-pressed', String(selected)); });
-    text('mapper-song-meta', `${track.artist || 'BeatCraft'} · ${track.genre} · ${track.bpm} catalog BPM${track.sourceType === 'cc0' ? ` · ${track.license || 'CC0'}` : ''}`);
+    text('mapper-song-meta', `${track.artist || (track.sourceType==='local'?'Local import':'BeatCraft')} · ${track.genre} · ${track.bpm} ${track.sourceType==='local'?'detected':'catalog'} BPM${track.sourceType === 'cc0' ? ` · ${track.license || 'CC0'}` : track.sourceType==='local'?' · private local audio':''}`);
     text('mapper-difficulty-guide', C.DIFFICULTY_GUIDES[mapper.difficulty]?.label || 'Map the music, not just the grid.');
     $('mapper-scrubber').max = String(Math.max(1, Math.round(map.audio.durationMs))); $('mapper-scrubber').value = String(Math.round(mapper.position)); text('mapper-duration', timeLabel(map.audio.durationMs));
     const analysis = mapper.analysis?.tempo || (map.analysis?.bpmEstimate ? { bpm:map.analysis.bpmEstimate, offset:map.analysis.offsetEstimate, confidence:map.analysis.confidence, samples:0 } : null);
@@ -62418,20 +62481,18 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     save.selected = mapper.trackId; ensureMapperMap(C.trackById(mapper.trackId)); persist(); showView('mapper'); refreshMapperUI(); requestAnimationFrame(drawMapper);
   }
   async function mapperLoadAudio() {
-    const track = C.trackById(mapper.trackId);
-    if (track.audio?.kind !== 'external') { mapper.waveform = null; mapper.waveformTrackId = track.id; mapper.analysis = null; mapperMessage('This BeatCraft original is synthesized in real time. Catalog timing is exact; section/onset analysis is intended for recorded tracks.', 'ok'); drawMapper(); return true; }
+    const track=C.trackById(mapper.trackId);
+    if(track.audio?.kind!=='external'){mapper.waveform=null;mapper.waveformTrackId=track.id;mapper.analysis=null;mapperMessage('This BeatCraft original is synthesized in real time. Catalog timing is exact; section/onset analysis is intended for recorded tracks.','ok');drawMapper();return true;}
     mapperMessage(`Loading ${track.title}…`);
-    if (!await audio.ensure() || !await audio.prepareTrack(track)) { mapperMessage('Audio is not installed. Attach the verified file or configure the R2 audio host first.', 'warn'); return false; }
-    const buffer = audio.bufferFor(track); if (!buffer) { mapperMessage('Audio loaded, but no decoded buffer is available.', 'warn'); return false; }
-    const detail = audio.detailsFor(track);
-    buildMapperWaveform(buffer, track);
-    const map = ensureMapperMap(), usable = Math.max(1000, (buffer.duration - Math.max(0, Number(track.audio?.clipStartMs || 0)) / 1000) * 1000);
-    if (map.meta?.cutType === 'arcade-cut') {
-      mapper.position = Math.min(mapper.position, map.audio.durationMs);
-      mapperMessage(`Real recording ready · ${buffer.duration.toFixed(1)} s source · ${timeLabel(map.audio.durationMs)} Arcade Cut preserved · ${detail?.accepted?'approved identity':'identity not approved'}. ${detail?.accepted?'Accept the recording, then analyze it.':'Attach an approved canonical recording before production analysis.'}`, detail?.accepted?'ok':'warn');
-    } else if (Math.abs(map.audio.durationMs - usable) > 250) { mapperSnapshot(); map.audio.durationMs = Math.round(usable); mapper.position = Math.min(mapper.position, usable); mapperCommit('Waveform loaded. Full-song map length matched to the recording.'); }
-    else mapperMessage(`Waveform ready · ${buffer.duration.toFixed(1)} s decoded audio · ${detail?.accepted?'approved identity':'identity not approved'}. ${detail?.accepted?'Accept it, then analyze pulse and sections.':'Production analysis stays locked until an approved recording is loaded.'}`, detail?.accepted?'ok':'warn');
-    refreshMapperUI(); return true;
+    if(!await audio.ensure()||!await audio.prepareTrack(track)){mapperMessage(track.sourceType==='local'?'Your local audio is missing on this device. Reattach the song file first.':'Audio is not installed. Attach the verified file or configure the R2 audio host first.','warn');return false;}
+    const buffer=audio.bufferFor(track);if(!buffer){mapperMessage('Audio loaded, but no decoded buffer is available.','warn');return false;}
+    const detail=audio.detailsFor(track);buildMapperWaveform(buffer,track);
+    const map=ensureMapperMap(),usable=Math.max(1000,(buffer.duration-Math.max(0,Number(track.audio?.clipStartMs||track.audio?.beatOffsetMs||0))/1000)*1000),local=track.sourceType==='local';
+    if(local){if(Math.abs(map.audio.durationMs-usable)>250){mapperSnapshot();map.audio.durationMs=Math.round(usable);mapper.position=Math.min(mapper.position,usable);mapperCommit('Local waveform loaded. Map length matched to the recording.');}else mapperMessage(`Local recording ready · ${buffer.duration.toFixed(1)} s · stored only in this browser. Analyze it to update pulse and section guides.`,'ok');}
+    else if(map.meta?.cutType==='arcade-cut'){mapper.position=Math.min(mapper.position,map.audio.durationMs);mapperMessage(`Real recording ready · ${buffer.duration.toFixed(1)} s source · ${timeLabel(map.audio.durationMs)} Arcade Cut preserved · ${detail?.accepted?'approved identity':'identity not approved'}. ${detail?.accepted?'Accept the recording, then analyze it.':'Attach an approved canonical recording before production analysis.'}`,detail?.accepted?'ok':'warn');}
+    else if(Math.abs(map.audio.durationMs-usable)>250){mapperSnapshot();map.audio.durationMs=Math.round(usable);mapper.position=Math.min(mapper.position,usable);mapperCommit('Waveform loaded. Full-song map length matched to the recording.');}
+    else mapperMessage(`Waveform ready · ${buffer.duration.toFixed(1)} s decoded audio · ${detail?.accepted?'approved identity':'identity not approved'}.`,detail?.accepted?'ok':'warn');
+    refreshMapperUI();return true;
   }
   function buildMapperWaveform(buffer, track) {
     const channel = buffer.getChannelData(0), bins = 4096, peaks = new Array(bins), clipStart = Math.max(0, Number(track.audio?.clipStartMs || 0) / 1000 * buffer.sampleRate);
@@ -62488,12 +62549,14 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     refreshMapperUI();
   }
   async function mapperAnalyzeAudio() {
-    const track=C.trackById(mapper.trackId); if(track.audio?.kind!=='external'){mapperMessage('Catalog timing for synthesized originals is already exact; audio analysis is for recorded songs.','ok');return;}
-    if(!await mapperLoadAudio())return; const buffer=audio.bufferFor(track), detail=audio.detailsFor(track), map=ensureMapperMap(), acceptance=map.audio?.acceptance; if(!buffer)return;
-    if(!C.acceptedRecording(track,acceptance)||!detail?.accepted||detail.identity!==acceptance.identity){mapperMessage('Accept this exact approved recording before waveform analysis. Analysis from unaccepted audio cannot enter the release workflow.','warn');return;}
-    mapperMessage('Analyzing accepted recording: pulse, attacks and section energy…'); await new Promise(r=>setTimeout(r,0));
-    mapper.analysis=mapperAudioAnalysis(buffer,track); const analyzedAt=new Date().toISOString(); map.analysis={bpmEstimate:mapper.analysis.tempo.bpm,offsetEstimate:mapper.analysis.tempo.offset,confidence:mapper.analysis.tempo.confidence,analyzedAt,recordingAnalyzed:true,recordingDurationMs:Math.round(buffer.duration*1000),recordingOrigin:detail.origin||audio.originFor(track)||'unknown',recordingIdentity:acceptance.identity,recordingSourceLabel:acceptance.sourceLabel||detail.sourceLabel||'',recordingAnalyzedAt:analyzedAt,sections:mapper.analysis.sections,onsets:mapper.analysis.onsets};
-    mapperCommit(`Accepted recording analyzed: ${mapper.analysis.onsets.length} musical attacks and ${mapper.analysis.sections.length} sections detected. Analysis is bound to ${acceptance.identity.slice(-12)}.`); refreshMapperUI();
+    const track=C.trackById(mapper.trackId);if(track.audio?.kind!=='external'){mapperMessage('Catalog timing for synthesized originals is already exact; audio analysis is for recorded songs.','ok');return;}
+    if(!await mapperLoadAudio())return;const buffer=audio.bufferFor(track),detail=audio.detailsFor(track),map=ensureMapperMap(),acceptance=map.audio?.acceptance;if(!buffer)return;
+    const official=!!C.officialPackForTrack(track);
+    if(official&&(!C.acceptedRecording(track,acceptance)||!detail?.accepted||detail.identity!==acceptance.identity)){mapperMessage('Accept this exact approved recording before waveform analysis. Analysis from unaccepted audio cannot enter the Official Pack release workflow.','warn');return;}
+    const identity=official?acceptance.identity:(detail?.identity||`local:${track.id}:${Math.round(buffer.duration*1000)}`);
+    mapperMessage(track.sourceType==='local'?'Analyzing your local recording: pulse, attacks and section energy…':'Analyzing accepted recording: pulse, attacks and section energy…');await new Promise(r=>setTimeout(r,0));
+    mapper.analysis=mapperAudioAnalysis(buffer,track);const analyzedAt=new Date().toISOString();map.analysis={bpmEstimate:mapper.analysis.tempo.bpm,offsetEstimate:mapper.analysis.tempo.offset,confidence:mapper.analysis.tempo.confidence,analyzedAt,recordingAnalyzed:true,recordingDurationMs:Math.round(buffer.duration*1000),recordingOrigin:detail?.origin||audio.originFor(track)||'local',recordingIdentity:identity,recordingSourceLabel:official?(acceptance.sourceLabel||detail?.sourceLabel||''):(track.fileName||''),recordingAnalyzedAt:analyzedAt,sections:mapper.analysis.sections,onsets:mapper.analysis.onsets};
+    mapperCommit(`${track.sourceType==='local'?'Local':'Accepted'} recording analyzed: ${mapper.analysis.onsets.length} musical attacks and ${mapper.analysis.sections.length} sections detected.`);refreshMapperUI();
   }
   function mapperUseAnalysis() {
     if(!mapper.analysis?.tempo?.bpm)return; $('mapper-bpm').value=mapper.analysis.tempo.bpm.toFixed(2); $('mapper-offset').value=Math.round(mapper.analysis.tempo.offset); mapperUpdateTiming('analysis'); mapperMessage('Analyzed pulse applied. Inspect the waveform/grid, nudge if needed, then confirm timing.','warn');
@@ -62633,6 +62696,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     'first-song': startFirstSong,
     'start-tutorial': () => { markOnboardingSeen(); startRun(getConfig({ mode: 'tutorial', demo: false, daily: null, rate: 1, section: 'full', loop: false, mirror: false })); },
     preview: previewTrack,
+    'import-local-song': () => $('local-song-file').click(),
     play: () => startRun(getConfig()),
     demo: () => startRun(getConfig({ mode: 'practice', demo: true, daily: null, rate: 1, loop: false })),
     daily: () => { const d = C.dailyChallenge(); save.selected = d.track.id; save.difficulty = d.difficulty; persist(); startRun(getConfig({ trackId: d.track.id, difficulty: d.difficulty, mode: 'arcade', rate: 1, mirror: d.mirror, daily: d.date, section: 'full', loop: false })); },
@@ -62680,7 +62744,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
     'return-mapper': () => openMapper(ui.lastConfig?.trackId || save.selected),
     fullscreen: toggleFullscreen,
     'attach-audio': () => $('track-audio-file').click(),
-    'remove-audio': async () => { const track = C.trackById(save.selected); await audio.removeLocalBlob(track.id); await refreshAudioStatus(track); toast('Local audio removed.'); },
+    'remove-audio': async () => {const track=C.trackById(save.selected);if(track.sourceType==='local'){confirmAction('Remove this local song?',`This removes ${track.title}, its local beatmaps, scores, and the browser-stored audio file. The original file on your device is untouched.`,'Remove local song',()=>deleteLocalSong(track));return;}await audio.removeLocalBlob(track.id);await refreshAudioStatus(track);toast('Local audio removed.');},
     export: exportProgress,
     import: () => $('import-file').click(),
     'reset-progress': () => confirmAction('Reset your records?', 'This removes this browser’s scores, milestones, and settings. Export a backup first to keep a copy.', 'Reset everything', () => {
@@ -62725,6 +62789,7 @@ body.high-contrast .pad-symbol{opacity:1;font-weight:900}body.high-contrast .jud
   ['mirror-toggle', 'practice-section', 'practice-rate'].forEach(id => $(id).addEventListener('change', refreshChartSummary));
   $('import-file').addEventListener('change', e => importProgress(e.target.files[0]));
   $('track-audio-file').addEventListener('change', async e => { await attachSelectedAudio(e.target.files[0]); if (ui.view === 'mapper' && save.selected === mapper.trackId) await mapperLoadAudio(); });
+  $('local-song-file').addEventListener('change', e => importLocalSong(e.target.files?.[0]));
   $('mapper-import-file').addEventListener('change', e => mapperImport(e.target.files[0]));
   $('mapper-track').addEventListener('change', e => { mapperPause(); mapper.trackId = Number(e.target.value); save.selected = mapper.trackId; mapper.map = null; mapper.position = 0; mapper.selected = -1; mapper.waveform = null; mapper.waveformTrackId = null; mapper.analysis = null; mapper.suggestions = []; mapper.tapTimes = []; mapper.undo.length = 0; mapper.redo.length = 0; ensureMapperMap(); persist(); refreshMapperUI(); });
   ['mapper-bpm', 'mapper-offset'].forEach(id => $(id).addEventListener('change', mapperUpdateTiming));
