@@ -1,16 +1,31 @@
 # BeatCraft 3 — Current Release Certification
 
-**Current build:** `3.0.1`  
-**Current phase:** 18 — Final Release Hardening & Release Freeze  
+**Current build:** `3.1.0`  
+**Current phase:** 19 — Local / Popular Song Packs  
 **Catalog:** Core 18 + 10 CC0  
 **Playable tracks:** 28  
 **Chart slots:** 84
 
 ## Automated certification status
 
-**PASS — 23 / 23 deterministic checks**
+**PASS — 24 / 24 deterministic checks**
 
-The v3.0.1 source line passes the deterministic release audit after the CC0 timing hotfix.
+The v3.1.0 source line passes the deterministic release audit after Phase 19.
+
+### Phase 19 local / popular song support
+
+- **My Music** imports user-supplied audio directly from the device;
+- commercial/local audio remains in browser IndexedDB and is never committed to GitHub;
+- local song metadata uses reserved dynamic IDs starting at 1000;
+- imported songs receive recording-locked Chill / Flow / Rush charts;
+- local tracks appear in the normal library with a LOCAL marker;
+- Preview, Arcade, Practice and Beatmap Studio work with local songs;
+- replacing a local recording invalidates/rebuilds stale non-human timing;
+- removing a local song deletes its browser audio, beatmaps, metadata and records;
+- backups include local-song metadata/maps but intentionally exclude audio binaries;
+- the new `phase19-local-music` deterministic gate passes.
+
+See `PHASE19_LOCAL_MUSIC.md`.
 
 ### v3.0.1 CC0 timing hotfix
 
@@ -44,7 +59,7 @@ See `V3_0_1_CC0_TIMING_HOTFIX.md`.
 
 ### Release audit
 
-`BeatRelease.audit()`: **23 / 23 automated checks pass**
+`BeatRelease.audit()`: **24 / 24 automated checks pass**
 
 The Phase 18 gate additionally verifies release freeze metadata, GitHub Pages-relative asset paths, the manifest link, backup primitives, and local-storage capability.
 
@@ -117,7 +132,7 @@ All 30 CC0 chart slots still require Phase 17 human evidence.
 
 ## Final release conclusion
 
-**v3.0.1 code / deterministic release certification: PASS.**
+**v3.1.0 code / deterministic release certification: PASS.**
 
 **Full 28-track human certification: NOT YET COMPLETE.**
 
