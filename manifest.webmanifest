@@ -1,0 +1,11 @@
+{
+  "name": "BeatCraft 3",
+  "short_name": "BeatCraft",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e5",
+  "theme_color": "#f6f1e5",
+  "description": "A release-hardened rhythm arcade with curated music, music-integrated charts, accessibility controls and local progress."
+}
