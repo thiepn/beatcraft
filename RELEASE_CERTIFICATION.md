@@ -1,6 +1,6 @@
 # BeatCraft 3 — Current Release Certification
 
-**Current build:** `3.0.0`  
+**Current build:** `3.0.1`  
 **Current phase:** 18 — Final Release Hardening & Release Freeze  
 **Catalog:** Core 18 + 10 CC0  
 **Playable tracks:** 28  
@@ -8,9 +8,22 @@
 
 ## Automated certification status
 
-**PASS — 22 / 22 deterministic checks**
+**PASS — 23 / 23 deterministic checks**
 
-The v3.0.0 source line passes the deterministic release audit after Phase 18.
+The v3.0.1 source line passes the deterministic release audit after the CC0 timing hotfix.
+
+### v3.0.1 CC0 timing hotfix
+
+- CC0 gameplay no longer trusts catalog-grid auto-draft timestamps;
+- stale non-human CC0 maps are rebuilt from detected attacks in the actual decoded recording before gameplay;
+- beat-compatible onset selection replaces the former ±72–125 ms local correction;
+- Chill ⊂ Flow ⊂ Rush timing is preserved;
+- the same musical event keeps the same lane across difficulties;
+- runtime repair is cached per decoded recording identity;
+- explicitly human-authored / verified chart timing is preserved;
+- the new deterministic `cc0-recording-locked-mapping` regression gate passes.
+
+See `V3_0_1_CC0_TIMING_HOTFIX.md`.
 
 ### Phase 18 release hardening
 
@@ -31,7 +44,7 @@ The v3.0.0 source line passes the deterministic release audit after Phase 18.
 
 ### Release audit
 
-`BeatRelease.audit()`: **22 / 22 automated checks pass**
+`BeatRelease.audit()`: **23 / 23 automated checks pass**
 
 The Phase 18 gate additionally verifies release freeze metadata, GitHub Pages-relative asset paths, the manifest link, backup primitives, and local-storage capability.
 
@@ -104,7 +117,7 @@ All 30 CC0 chart slots still require Phase 17 human evidence.
 
 ## Final release conclusion
 
-**v3.0.0 code / deterministic release certification: PASS and frozen.**
+**v3.0.1 code / deterministic release certification: PASS.**
 
 **Full 28-track human certification: NOT YET COMPLETE.**
 
