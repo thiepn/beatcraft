@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="#f6f1e5" name="theme-color"/>
 <meta content="BeatCraft 3 Phase 12: calibrated Core charts, ergonomic lane flow, preserved music integration, and structured playtest QA." name="description"/>
-<title>BeatCraft 3 — Phase 12 Chart Calibration</title>
+<title>BeatCraft 3 — Phase 13 First-Run & UX</title>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23222b32'/%3E%3Cpath d='M15 36V25M26 46V15M38 41V21M49 35V27' stroke='%23f8ce47' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E" rel="icon"/>
 <style>:root{--paper:#f6f1e5;--ink:#242c32;--muted:#646962;--line:#d8d5c9;--coral:#ff7467;--yellow:#f8ce47;--green:#91d49b;--blue:#68bfea;--surface:#fffdf6;--dark:#19212c;--display:'Arial Rounded MT Bold','Trebuchet MS',system-ui,sans-serif;--body:Inter,'Segoe UI',Arial,sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scrollbar-gutter:stable}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.5}body::before{content:'';position:fixed;inset:0;z-index:-1;opacity:.32;background-image:radial-gradient(#a7a79c .6px,transparent .6px);background-size:7px 7px;pointer-events:none}button,input,select{font:inherit}button{color:inherit;cursor:pointer}button,select{-webkit-appearance:none}button{border:0;background:none}button:disabled{cursor:not-allowed;opacity:.48}input,select{max-width:100%}input[type=range]{accent-color:var(--ink);width:100%;cursor:pointer}input[type=checkbox]{width:17px;height:17px;accent-color:var(--ink);flex-shrink:0;cursor:pointer}a{color:inherit}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #23729d;outline-offset:4px}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);letter-spacing:-.04em}h1{font-size:clamp(36px,3.4vw,55px);font-weight:900;line-height:1.05}h1 em{font-style:normal;position:relative;white-space:nowrap}h1 em::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:5px;border-radius:100%;background:var(--coral);transform:rotate(-2deg)}[hidden]{display:none!important}svg{display:block;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}kbd{font-family:var(--body);display:inline-flex;justify-content:center;align-items:center;min-width:24px;height:25px;padding:0 5px;background:#fffdf6;border:1px solid #b9b9ad;border-bottom-width:3px;border-radius:5px;font-size:10px;font-weight:800;color:var(--ink)}.app-shell{max-width:1536px;margin:0 auto;padding:0 42px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:2px solid var(--ink);height:98px}.brand{display:flex;gap:12px;align-items:center;padding:0;text-align:left;flex-shrink:0}.brand-mark{height:45px;width:45px;background:var(--yellow);border:2px solid var(--ink);border-radius:13px;box-shadow:3px 3px 0 var(--ink);display:flex;align-items:center;justify-content:center;gap:4px;transform:rotate(-5deg)}.brand-mark i{width:4px;height:15px;border-radius:4px;background:var(--ink)}.brand-mark i:nth-child(2){height:26px}.brand-mark i:nth-child(3){height:20px}.brand-mark i:nth-child(4){height:12px}.brand-word{font:900 30px/.95 var(--display);letter-spacing:-1.5px}.brand-word>span{color:#d95344}.brand-word small{display:block;font:800 7.7px/1 var(--body);letter-spacing:1.65px;margin-top:9px}.main-nav{display:flex;align-items:center;gap:28px;height:100%}.main-nav button{height:100%;font-weight:750;font-size:13px;padding:3px 0 0;position:relative;color:var(--muted)}.main-nav button.active{color:var(--ink)}.main-nav button.active::after{content:'';height:4px;background:var(--ink);position:absolute;bottom:-2px;left:0;right:0}.header-tools{display:flex;align-items:center;gap:9px}.profile-chip{font-size:11px;font-weight:900;letter-spacing:.03em;margin-right:10px}.profile-chip span{display:block;font-size:8px;color:var(--muted);letter-spacing:.09em}.icon-button{display:inline-flex;align-items:center;justify-content:center;width:39px;height:39px;border:1.5px solid var(--ink);border-radius:10px;background:var(--surface);font-size:26px;font-weight:600;transition:background .15s,transform .15s}.icon-button:hover{background:var(--yellow);transform:translateY(-1px)}.icon-button[aria-pressed=true]{background:var(--yellow)}.icon-button.small{width:32px;height:32px;border-radius:8px}.icon-button.small svg{width:17px;height:17px}.eyebrow{font-size:9px;font-weight:850;letter-spacing:1.4px;line-height:1.6;display:flex;align-items:center;gap:7px}.live-dot,.offline-dot{width:6px;height:6px;display:inline-block;background:#498961;border-radius:50%;flex-shrink:0}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:33px 0 29px}.section-heading .eyebrow{margin-bottom:13px}.text-button{font-size:12px;font-weight:750;padding:9px 0;display:inline-flex;align-items:center;gap:10px;text-align:left}.text-button:hover{text-decoration:underline;text-underline-offset:5px}.text-button>span:last-child{font-size:18px}.view{display:none}.view.active{display:block}.button{min-height:43px;border:1.5px solid var(--ink);border-radius:9px;padding:11px 16px;display:inline-flex;justify-content:center;align-items:center;gap:9px;font-size:12px;font-weight:800;line-height:1.4;transition:transform .12s,box-shadow .12s}.button.primary{background:var(--yellow);box-shadow:3px 3px 0 var(--ink)}.button.primary:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}.button.primary:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.button.outline{background:var(--surface)}.button.outline:hover{background:#eeeadd}.crate-layout{display:grid;grid-template-columns:minmax(235px,.92fr) minmax(335px,1.48fr) minmax(240px,.88fr);gap:25px;align-items:start}.feature-record{min-width:0}.sleeve{width:100%;aspect-ratio:1/1;border:2px solid var(--ink);border-radius:7px;box-shadow:5px 5px 0 var(--ink);position:relative;overflow:hidden;background:var(--coral)}.cover-svg{width:100%;height:100%;stroke:none;stroke-width:0}.record-label{display:flex;justify-content:space-between;font-size:8px;font-weight:850;letter-spacing:1.2px;margin:25px 0 9px}.feature-record h2{font-size:34px;line-height:1.1;margin-bottom:9px}.feature-mood{font-size:12px;color:var(--muted);min-height:36px;max-width:260px}.record-specs{display:flex;gap:0;align-items:center;flex-wrap:wrap;margin:15px 0 19px;font-size:10px;font-weight:650}.record-specs span+span{border-left:1px solid #aeafa3;margin-left:10px;padding-left:10px}.record-specs b{font-size:13px}.preview-button{width:100%;justify-content:center;min-height:39px}.preview-button>span{font-size:17px}.preview-button.playing{background:var(--green)}.record-tip{display:flex;gap:12px;align-items:center;padding:21px 3px 0}.record-tip>span{font-size:32px;color:#d05b49}.record-tip p{font-size:10px;line-height:1.8;color:var(--muted)}.track-crate{border:1.5px solid var(--ink);background:var(--surface);border-radius:12px;overflow:hidden;box-shadow:3px 3px 0 #dad8cc;min-width:0}.crate-top{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 13px;gap:8px}.crate-top h2{font-size:19px;white-space:nowrap}.crate-top h2 span{font-family:var(--body);font-size:10px;border:1px solid #b8baaf;vertical-align:middle;padding:2px 5px;border-radius:4px;margin-left:5px;font-weight:700}.micro-label{font-size:7px;font-weight:800;letter-spacing:.9px;max-width:95px;text-align:right;line-height:1.5;color:var(--muted)}.search-row{display:flex;align-items:center;gap:8px;margin:0 18px 13px;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:#f7f5ed}.search-row svg{width:15px;height:15px;flex-shrink:0}.search-row input{background:none;border:0;outline-offset:6px;width:100%;font-size:11px;color:var(--ink)}.search-row input::placeholder{color:#73766b}.track-list{padding:0 8px 8px;max-height:479px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#b7b9aa transparent;overscroll-behavior:contain}.track-row{width:100%;display:grid;grid-template-columns:20px 42px minmax(0,1fr) 45px;gap:10px;align-items:center;text-align:left;border:1.5px solid transparent;border-radius:7px;padding:10px 9px;transition:background .12s;position:relative}.track-row+.track-row::before{content:'';position:absolute;top:-1px;left:12px;right:12px;height:1px;background:#eeeae0}.track-row.selected{background:#f8edc7;border-color:var(--ink)}.track-row.selected::before,.track-row.selected+.track-row::before{display:none}.track-row:hover:not(.selected){background:#f2eee3}.track-number{font:750 9px/1 var(--body);color:#808478}.track-row.selected .track-number{color:var(--ink)}.track-thumb{width:42px;height:42px;border:1px solid var(--ink);border-radius:5px;overflow:hidden}.track-row-title{display:block;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track-row-meta{display:block;font-size:9px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track-row-score{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:4px}.track-row-score b{font-size:11px;line-height:1}.tiny-stars{font-size:10px;letter-spacing:1px;color:#aaa998}.tiny-stars .lit{color:#956511}.track-row.selected .track-row-score b{background:var(--ink);color:var(--yellow);padding:5px;border-radius:50%;width:23px;height:23px;text-align:center;font-size:9px;line-height:13px}.crate-bottom{display:flex;justify-content:space-between;gap:8px;padding:13px 16px;border-top:1px solid var(--line);font-size:6.6px;font-weight:850;letter-spacing:.4px;background:#f8f5eb}.crate-bottom>span:first-child{display:flex;align-items:center;gap:5px}.setup-column{display:flex;flex-direction:column;gap:16px}.setup-card{border:1.5px solid var(--ink);border-radius:12px;background:var(--surface);padding:20px;box-shadow:3px 3px 0 #dad8cc}.setup-card>.eyebrow{font-size:7px;letter-spacing:1px;margin-bottom:5px}.setup-card h2{font-size:27px;line-height:1.1;margin-bottom:24px}.field-label{display:flex;gap:9px;font-size:9px;font-weight:850;color:#929183;margin-bottom:9px}.field-label>span{color:var(--ink)}.difficulty-options{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}.difficulty-options button{display:flex;align-items:center;gap:11px;border:1.3px solid var(--line);border-radius:7px;text-align:left;padding:9px 10px;background:#faf8f0;min-height:49px}.difficulty-options button.selected{border-color:var(--ink);background:#f3e4a6;box-shadow:2px 2px 0 var(--ink)}.difficulty-options button:hover{border-color:var(--ink)}.difficulty-bars{letter-spacing:-2px;font-size:17px;white-space:nowrap;width:26px;flex-shrink:0;transform:skew(-10deg)}.difficulty-bars i{font-style:normal;opacity:.18}.difficulty-options b{display:block;font-size:11px}.difficulty-options small{display:block;font-size:8px;color:var(--muted);margin-top:1px}.choice-check{margin-left:auto;opacity:0;font-weight:900}.selected .choice-check{opacity:1}.segmented{display:flex;background:#efece1;border:1px solid #d2d0c5;border-radius:7px;padding:3px;gap:3px}.segmented button{padding:7px 8px;flex:1;font-size:10px;font-weight:800;border-radius:4px}.segmented button.selected{background:var(--ink);color:#fffdf4}.small-note{font-size:10px;color:var(--muted);line-height:1.7}.setup-card>.small-note{margin:9px 0 10px}.check-row{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:10px}.check-row input{margin:0;width:14px;height:14px}.mirror-option{margin:12px 0 16px}.mini-tag{margin-left:auto;font-size:17px;line-height:1}.session-summary{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);padding:11px 0 13px;border-top:1px dashed #cccec0}.play-button{width:100%;justify-content:space-between;font-size:14px;padding:12px 14px;min-height:49px}.demo-button{display:block;width:100%;text-align:center;text-decoration:underline;text-underline-offset:3px;font-size:8.5px;color:var(--muted);padding:13px 0}.best-line{border-top:1px solid var(--line);padding-top:11px;display:flex;align-items:center;justify-content:space-between;gap:6px}.best-line>span{font-size:6.8px;letter-spacing:.7px;font-weight:750}.best-line b{font-size:9px}.daily-card{background:#e7eada;border:1.5px solid var(--ink);border-radius:9px;padding:15px 13px;display:flex;align-items:center;gap:10px;text-align:left;box-shadow:2px 2px 0 #d3d6c4}.daily-icon{font-size:26px;color:#53624c;line-height:1}.daily-card b{display:block;font-size:11px}.daily-card small{display:block;font-size:8px;color:#555e51;margin-top:3px;line-height:1.5}.daily-card>span:last-child{margin-left:auto;font-size:20px}.daily-card:hover{background:#d7dfc7}.select-label{display:block;font-size:9px;font-weight:700;margin:12px 0}.select-label select{display:block;width:100%;padding:8px;background:#f8f5e9;color:var(--ink);border:1px solid #bdc0b2;border-radius:5px;margin-top:4px;background-image:linear-gradient(45deg,transparent 50%,#242c32 50%),linear-gradient(135deg,#242c32 50%,transparent 50%);background-position:calc(100% - 12px) 14px,calc(100% - 8px) 14px;background-size:4px 4px;background-repeat:no-repeat}.library-foot{display:flex;align-items:center;justify-content:space-between;margin:28px 0 25px;border-top:1px solid #cccdbf;padding-top:18px;gap:12px;font-size:7px;font-weight:750;letter-spacing:.6px}.library-foot>span:last-child>span{font-size:17px;vertical-align:middle;margin-left:12px}.key-guide{display:flex;align-items:center;gap:5px}.key-guide>span:last-child{font-weight:500;letter-spacing:0;font-size:10px;margin-left:9px;color:var(--muted)}.app-footer{display:flex;justify-content:space-between;font-size:7px;letter-spacing:.85px;font-weight:750;color:#797e73;gap:15px;padding:17px 0 22px;border-top:1px solid var(--line)}.app-footer b{padding:2px 3px;background:var(--ink);color:var(--paper);border-radius:3px;margin-left:4px}.warning-banner{padding:12px;background:#f8edc7;border:1px solid #95752e;border-radius:7px;margin:12px 0;font-size:12px}.empty-state{padding:45px 18px;text-align:center;font-size:12px;color:var(--muted)}
@@ -102,6 +102,13 @@ body.playing .warning-banner{display:none}
 .music-qa-body{padding:20px;display:grid;gap:16px;overflow:auto;max-height:68vh}.music-qa-summary{display:flex;gap:10px;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#f8f5eb;font-size:10px;font-weight:750}.music-qa-current{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;border:1.5px solid var(--ink);border-radius:10px;padding:16px;background:var(--surface)}.music-qa-current h3{font-size:25px}.music-qa-current p{font-size:10px;color:var(--muted);margin-top:4px}.music-qa-actions{display:flex;gap:8px;align-items:start;flex-wrap:wrap;justify-content:flex-end}.music-qa-watch,.music-qa-notes,.music-qa-decisions{grid-column:1/-1}.music-qa-watch{padding:10px 12px;background:#f7ebbb;border-radius:7px}.music-qa-watch b{font-size:8px;letter-spacing:1px}.music-qa-notes{display:grid;gap:6px;font-size:9px;font-weight:850}.music-qa-notes textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:7px;padding:10px;background:#fffdf6;color:var(--ink);font:inherit;min-height:74px}.music-qa-decisions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.music-qa-decisions button{min-height:42px;border:1.5px solid var(--ink);border-radius:7px;font-size:10px;font-weight:900}.music-qa-decisions button.selected{background:var(--ink);color:var(--yellow);box-shadow:2px 2px 0 var(--yellow)}.music-qa-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.music-qa-row{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:8px;padding:9px;border:1px solid var(--line);border-radius:7px;text-align:left;background:#faf8f0}.music-qa-row.current{border-color:var(--ink);background:#f8edc7}.music-qa-row b{font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.music-qa-row small{font-size:8px;color:var(--muted)}.music-qa-status{font-size:7px;font-weight:900;letter-spacing:.4px;padding:4px 6px;border-radius:999px;background:#e6e3d8}.music-qa-status.keep{background:#d8eddc;color:#315d45}.music-qa-status.rework{background:#f7ebbb;color:#6f5717}.music-qa-status.replace{background:#ffe1dc;color:#8c3a30}@media(max-width:640px){.music-qa-current{grid-template-columns:1fr}.music-qa-actions{justify-content:stretch}.music-qa-actions .button{flex:1}.music-qa-list{grid-template-columns:1fr}.music-qa-decisions{grid-template-columns:1fr}}
 </style>
 </style>
+
+<style>
+/* Phase 13 — first-run experience & UX polish */
+.nav-short{display:none}.first-run-card{border:1.5px solid var(--ink);border-radius:12px;padding:16px;background:linear-gradient(135deg,#fff4c7,#f6fbf2);box-shadow:3px 3px 0 #dad8cc}.first-run-card h3{font-size:20px;margin:5px 0 6px}.first-run-card p{font-size:9px;line-height:1.6;color:var(--muted)}.first-run-card .eyebrow{font-size:7px;letter-spacing:1px}.first-run-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:13px}.first-run-actions .button{padding:9px 8px;font-size:9px}.mode-description{min-height:34px;padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:#f7f5ed;line-height:1.5}.onboarding-dialog{width:min(820px,calc(100vw - 28px));max-height:min(92vh,900px)}.onboarding-body{padding:20px;display:grid;gap:18px;overflow:auto;max-height:68vh}.onboarding-body>section{min-width:0}.onboarding-step{display:block;font-size:7px;font-weight:950;letter-spacing:1px;color:var(--muted);margin-bottom:7px}.onboarding-intro h3,.onboarding-recommend h3{font-size:25px;margin-bottom:5px}.onboarding-intro>p,.onboarding-recommend p{font-size:10px;color:var(--muted);line-height:1.65}.onboard-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0 9px}.onboard-keys button{min-height:76px;border:2px solid var(--ink);border-radius:10px;background:var(--coral);box-shadow:0 4px 0 var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .08s,box-shadow .08s,filter .12s}.onboard-keys button:nth-child(2){background:var(--yellow)}.onboard-keys button:nth-child(3){background:var(--green)}.onboard-keys button:nth-child(4){background:var(--blue)}.onboard-keys button b{font:900 22px var(--display)}.onboard-keys button span{font-size:10px;opacity:.65}.onboard-keys button small{font-size:6px;font-weight:900;letter-spacing:.8px;opacity:.6}.onboard-keys button.learned{filter:saturate(.7) brightness(1.08);box-shadow:0 1px 0 var(--ink);transform:translateY(3px)}.onboard-keys button.learned::after{content:'READY';font-size:6px;font-weight:950;letter-spacing:.7px;margin-top:2px}.onboard-status{text-align:center!important;font-size:8px!important;font-weight:850;color:var(--muted)!important}.onboard-status.complete{color:#315d45!important}.onboarding-rules,.onboarding-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.onboarding-rules article,.onboarding-paths article{border:1px solid var(--line);border-radius:8px;padding:11px;background:#faf8f0}.onboarding-rules b,.onboarding-paths b{display:block;font-size:11px;margin-bottom:4px}.onboarding-rules p,.onboarding-paths p{font-size:8px;line-height:1.55;color:var(--muted)}.onboarding-paths{grid-template-columns:1fr 1fr}.onboarding-paths article>span{display:block;font-size:7px;font-weight:950;letter-spacing:.8px;color:#6d756c;margin-bottom:4px}.onboarding-recommend{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px;border:1.5px solid var(--ink);border-radius:9px;background:#f8edc7}.recommend-badge{flex-shrink:0;padding:7px 9px;border:1.5px solid var(--ink);border-radius:999px;background:var(--yellow);font-size:7px;font-weight:950;letter-spacing:.8px}.onboarding-footer{align-items:center}.onboarding-footer>div{display:flex;gap:8px;margin-left:auto}.onboarding-footer>.text-button{font-size:10px}.difficulty-options button[data-difficulty="chill"]::after{content:'FIRST RUN';display:none;position:absolute;right:7px;bottom:6px;font-size:5.5px;font-weight:950;letter-spacing:.6px;color:#315d45}.first-run-active .difficulty-options button[data-difficulty="chill"]::after{display:block}.creator-context{font-size:8px;color:var(--muted)}
+@media(max-width:650px){.nav-long{display:none}.nav-short{display:inline}.main-nav{gap:0;justify-content:space-around;padding-left:10px;padding-right:10px}.main-nav button{flex:1;font-size:10px}.first-run-card{padding:14px}.first-run-actions{grid-template-columns:1fr}.setup-column{gap:12px}.setup-card{padding:16px}.setup-card h2{font-size:25px;margin-bottom:17px}.difficulty-options{margin-bottom:16px}.difficulty-options button{min-height:72px;padding:8px}.mode-description{font-size:9px;min-height:0}.track-list{max-height:340px}.crate-layout{gap:16px}.onboarding-body{padding:16px;gap:15px}.onboard-keys{gap:5px}.onboard-keys button{min-height:68px}.onboard-keys button b{font-size:19px}.onboarding-rules{grid-template-columns:1fr}.onboarding-paths{grid-template-columns:1fr 1fr}.onboarding-recommend{align-items:flex-start}.recommend-badge{font-size:6px}.onboarding-footer{display:grid;grid-template-columns:1fr}.onboarding-footer>div{display:grid;grid-template-columns:1fr;margin:0;width:100%}.onboarding-footer>.text-button{justify-content:center;order:2}.onboarding-footer .button{width:100%}}
+@media(max-width:390px){.onboard-keys button{min-height:62px}.onboard-keys button small{display:none}.onboarding-paths{grid-template-columns:1fr}.onboarding-recommend{display:block}.recommend-badge{display:inline-flex;margin-top:10px}.first-run-card h3{font-size:18px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to game content</a>
@@ -112,10 +119,10 @@ body.playing .warning-banner{display:none}
 <span class="brand-word">beat<span>craft</span><small>THE POCKET RHYTHM ARCADE</small></span>
 </button>
 <nav aria-label="Main navigation" class="main-nav">
-<button class="active" data-nav="library">Record crate</button>
-<button data-nav="pack">Official pack</button>
-<button data-nav="mapper">Mapper</button>
-<button data-nav="stats">Your collection</button>
+<button class="active" data-nav="library" aria-label="Play"><span class="nav-long">Play</span><span class="nav-short">Play</span></button>
+<button data-nav="stats" aria-label="Collection"><span class="nav-long">Collection</span><span class="nav-short">Collection</span></button>
+<button data-nav="pack" aria-label="Official Pack"><span class="nav-long">Official Pack</span><span class="nav-short">Pack</span></button>
+<button data-nav="mapper" aria-label="Beatmap Studio"><span class="nav-long">Beatmap Studio</span><span class="nav-short">Studio</span></button>
 </nav>
 <div class="header-tools">
 <span class="profile-chip" id="profile-chip">LV. 01 <span>NEW LISTENER</span></span>
@@ -128,7 +135,7 @@ body.playing .warning-banner{display:none}
 <section aria-labelledby="library-heading" class="view active" id="view-library">
 <div class="section-heading">
 <div><div class="eyebrow"><span class="live-dot"></span> ALL TRACKS UNLOCKED. GOOD VIBES INCLUDED.</div><h1 id="library-heading">Find your <em>pocket.</em></h1></div>
-<button class="text-button" data-action="tutorial">First time? Learn the rhythm <span aria-hidden="true">↗</span></button>
+<button class="text-button" data-action="tutorial">New here? Start in 3 minutes <span aria-hidden="true">↗</span></button>
 </div>
 <div class="crate-layout">
 <article class="feature-record">
@@ -154,6 +161,12 @@ body.playing .warning-banner{display:none}
 <div class="crate-bottom"><span><i class="offline-dot"></i> AUDIO LOADS ONLY WHEN YOU PLAY IT.</span><span id="crate-progress">0 / 84 CHARTS CLEARED</span></div>
 </section>
 <aside aria-label="Session setup" class="setup-column">
+<section class="first-run-card" id="first-run-card" hidden>
+  <span class="eyebrow">NEW TO BEATCRAFT?</span>
+  <h3>Your first three minutes.</h3>
+  <p>Learn the four lanes in a short no-fail lesson, then play <b>First Pulse · Chill</b> as your first full track.</p>
+  <div class="first-run-actions"><button class="button primary" data-action="start-tutorial">Guided lesson ▶</button><button class="button outline" data-action="first-song">Play First Pulse · Chill</button></div>
+</section>
 <section class="setup-card">
 <div class="eyebrow">MAKE IT YOUR SESSION</div>
 <h2>Set the pace.</h2>
@@ -165,7 +178,7 @@ body.playing .warning-banner{display:none}
 </div>
 <div class="field-label" id="mode-label">02 <span>Choose your mode</span></div>
 <div aria-labelledby="mode-label" class="segmented" role="group"><button class="selected" data-mode="arcade">Arcade</button><button data-mode="practice">Practice</button></div>
-<p class="small-note" id="mode-description">Keep your groove meter alive. Chase a personal best.</p>
+<p class="small-note mode-description" id="mode-description">Ranked · Scores, stars and personal bests save. The groove meter can end the run.</p>
 <div hidden="" id="practice-options">
 <label class="select-label">Playback speed<select id="practice-rate"><option value="0.5">50% · half speed</option><option selected="" value="0.75">75% · take it easy</option><option value="1">100% · original</option><option value="1.25">125% · challenge</option></select></label>
 <label class="select-label">Practice section<select id="practice-section"><option value="full">Full track</option></select></label>
@@ -248,7 +261,7 @@ body.playing .warning-banner{display:none}
 </div></section>
 <section aria-labelledby="stats-heading" class="view" id="view-stats"><div class="section-heading"><div><div class="eyebrow">A COLLECTION YOU CAN HEAR</div><h1 id="stats-heading">Your good <em>records.</em></h1></div><button class="button outline" data-action="export">Export progress ↗</button></div><div class="stats-metrics" id="stats-metrics"></div><div class="collection-grid"><section><div class="subheading"><h2>The milestones</h2><span id="achievement-count"></span></div><div class="achievements" id="achievements"></div></section><section class="recent-section"><div class="subheading"><h2>Recent sessions</h2><span>ARCADE ONLY</span></div><div id="recent-runs"></div></section></div><div class="collection-foot">Progress lives in this browser. Export a backup to take your records with you.</div></section>
 </main>
-<footer class="app-footer"><span>BEATCRAFT <b>11</b> / PHASE 11 · CORE MUSIC QA</span><span id="footer-catalog">28 TRACKS · 84 CHARTS · CORE 18 · MUSIC QA</span></footer>
+<footer class="app-footer"><span>BEATCRAFT <b>13</b> / PHASE 13 · FIRST-RUN UX</span><span id="footer-catalog">28 TRACKS · 84 CHARTS · CORE 18 · RC4</span></footer>
 </div>
 <dialog aria-labelledby="settings-heading" id="settings-dialog"><div class="dialog-heading"><div><span class="eyebrow">TUNE YOUR INSTRUMENT</span><h2 id="settings-heading">Your setup.</h2></div><button aria-label="Close settings" class="icon-button" data-close="">×</button></div><div class="settings-body">
 <section class="settings-section"><h3>Sound desk</h3><label class="range-label">Master volume <output id="volume-value"></output><input id="setting-volume" max="100" min="0" step="1" type="range"/></label><label class="range-label">Music <output id="music-value"></output><input id="setting-music" max="100" min="0" step="1" type="range"/></label><label class="range-label">Tap feedback <output id="sfx-value"></output><input id="setting-sfx" max="100" min="0" step="1" type="range"/></label></section>
@@ -256,6 +269,7 @@ body.playing .warning-banner{display:none}
 <section class="settings-section"><h3>Your four keys</h3><div class="key-bindings" id="key-bindings"></div><p class="small-note" id="binding-help">Select a key, then press its replacement. Space and Escape are reserved for pause. Arrow keys also work.</p><button class="text-button" data-action="reset-keys">Reset to D F J K</button></section>
 <section class="settings-section"><h3>Comfort &amp; accessibility</h3><label class="toggle-row"><span><b>Reduced motion</b><small>No particles or decorative movement.</small></span><input id="setting-reducedMotion" type="checkbox"/></label><label class="toggle-row"><span><b>High-contrast notes</b><small>Stronger edges; lane shapes stay visible.</small></span><input id="setting-contrast" type="checkbox"/></label><label class="toggle-row"><span><b>Timing hints</b><small>Show early / late feedback while playing.</small></span><input id="setting-timingHints" type="checkbox"/></label><label class="toggle-row"><span><b>Touch vibration</b><small>Optional; depends on device support.</small></span><input id="setting-haptics" type="checkbox"/></label></section>
 <section class="settings-section"><h3>Your progress</h3><p class="small-note">Local to this browser. No account, cloud, or tracking. Practice and demos do not change Arcade records.</p><div class="backup-actions"><button class="button outline" data-action="export">Export backup</button><button class="button outline" data-action="import">Import backup</button></div><input accept=".json,application/json" hidden="" id="import-file" type="file"/><button class="text-button danger" data-action="reset-progress">Reset local progress</button></section>
+<section class="settings-section"><h3>Getting started</h3><p class="small-note">Replay the first-run guide at any time, or jump directly into the no-fail lesson. Nothing here affects your records.</p><div class="backup-actions"><button class="button outline" data-action="onboarding">Open first-run guide</button><button class="button outline" data-action="start-tutorial">Guided lesson</button></div></section>
 <section class="settings-section"><h3>Core music release QA</h3><p class="small-note">Phase 11 corrected the strongest repetition and fatigue risks automatically. Final approval still requires listening: hook, section contrast, mix clarity, fatigue, distinctness and replay value.</p><button class="button outline" data-action="music-qa">Open 18-song listening checklist →</button></section>
 <section class="settings-section"><h3>Core chart playtest QA</h3><p class="small-note">Phase 12 calibrates lane flow, holds, jumps and difficulty spacing automatically. Final chart approval still requires a real 1.0× playtest of all 54 Core charts.</p><button class="button outline" data-action="chart-qa">Open 54-chart playtest checklist →</button></section>
 <section class="settings-section scoring-note"><h3>How scoring works</h3><p>Perfect: ±45 ms (100%). Great: ±90 ms (80%). Good: ±145 ms (50%). Tap and hold-tail judgments count equally. Hold to the end, with 90 ms release grace. One million is a perfect score on every chart. Stray taps break combo and reduce score.</p><p>Stars: 65% / 85% / 95% accuracy on a completed run. S: 97%. S+: every judgment Perfect, with no stray taps. Full Combo means no misses and no stray taps. All tracks are always available.</p></section>
@@ -263,6 +277,30 @@ body.playing .warning-banner{display:none}
 <dialog aria-labelledby="music-qa-heading" id="music-qa-dialog"><div class="dialog-heading"><div><span class="eyebrow">PHASE 11 · SUBJECTIVE RELEASE GATE</span><h2 id="music-qa-heading">Core music listening QA.</h2></div><button aria-label="Close music QA" class="icon-button" data-action="music-qa-close">×</button></div><div class="music-qa-body"><div class="music-qa-summary" id="music-qa-summary"></div><section class="music-qa-current"><div><span class="eyebrow" id="music-qa-number">CORE / 01</span><h3 id="music-qa-title">First Pulse</h3><p id="music-qa-meta"></p></div><div class="music-qa-actions"><button class="button primary" data-action="music-qa-play" id="music-qa-play">Play full song ▶</button><button class="button outline" data-action="music-qa-prev">← Previous</button><button class="button outline" data-action="music-qa-next">Next →</button></div><div class="music-qa-watch"><b>LISTEN FOR</b><p id="music-qa-watch"></p></div><label class="music-qa-notes">Listening notes<textarea id="music-qa-notes" rows="3" maxlength="500" placeholder="Hook, mix, fatigue, similarity, section contrast…"></textarea></label><div class="music-qa-decisions" role="group" aria-label="Release decision"><button data-qa-decision="keep">KEEP</button><button data-qa-decision="rework">REWORK</button><button data-qa-decision="replace">REPLACE</button></div></section><div class="music-qa-list" id="music-qa-list"></div></div><div class="dialog-footer"><span>Decisions stay only in this browser.</span><button class="button primary" data-action="music-qa-close">Close QA</button></div></dialog>
 <dialog aria-labelledby="chart-qa-heading" id="chart-qa-dialog"><div class="dialog-heading"><div><span class="eyebrow">PHASE 12 · PLAYABILITY RELEASE GATE</span><h2 id="chart-qa-heading">Core chart playtest QA.</h2></div><button aria-label="Close chart QA" class="icon-button" data-action="chart-qa-close">×</button></div><div class="music-qa-body"><div class="music-qa-summary" id="chart-qa-summary"></div><section class="music-qa-current"><div><span class="eyebrow" id="chart-qa-number">CORE / 01 · FLOW</span><h3 id="chart-qa-title">First Pulse</h3><p id="chart-qa-meta"></p></div><div class="music-qa-actions"><button class="button primary" data-action="chart-qa-play">Play full chart ▶</button><button class="button outline" data-action="chart-qa-prev">← Previous</button><button class="button outline" data-action="chart-qa-next">Next →</button></div><div class="chart-qa-metrics" id="chart-qa-metrics"></div><div class="music-qa-watch"><b>PLAYTEST FOR</b><p>Lane flow, hand comfort, holds, chord ergonomics, local spikes, musical emphasis, and whether the difficulty label feels correct at 1.0×.</p></div><label class="music-qa-notes">Playtest notes<textarea id="chart-qa-notes" rows="3" maxlength="500" placeholder="Awkward lane jump, undercharted hook, difficulty spike…"></textarea></label><div class="music-qa-decisions" role="group" aria-label="Chart decision"><button data-chart-qa-decision="pass">PASS</button><button data-chart-qa-decision="rework">REWORK</button></div></section><div class="music-qa-list" id="chart-qa-list"></div></div><div class="dialog-footer"><span>Automated calibration does not count as a human playtest.</span><button class="button primary" data-action="chart-qa-close">Close QA</button></div></dialog>
 <dialog aria-labelledby="help-heading" id="help-dialog"><div class="dialog-heading"><div><span class="eyebrow">THREE MOVES. A WHOLE LOT OF MUSIC.</span><h2 id="help-heading">Find the line.</h2></div><button aria-label="Close instructions" class="icon-button" data-close="">×</button></div><div class="help-body"><div class="help-example"><div class="example-notes"><i></i><i></i><i></i><i></i></div><div class="example-line"></div><div class="example-keys"><kbd data-key-label="0">D</kbd><kbd data-key-label="1">F</kbd><kbd data-key-label="2">J</kbd><kbd data-key-label="3">K</kbd></div></div><div class="help-steps"><div><span>01</span><p><b>Tap at the white line.</b> Match the center of the falling note to its receptor. Press its key or touch anywhere in that lane.</p></div><div><span>02</span><p><b>Two notes? Both hands.</b> Chords arrive together. Press both lanes at the same time.</p></div><div><span>03</span><p><b>A long tail? Keep holding.</b> Release when the tail reaches the line. A hold has a head and a tail to score.</p></div></div><p class="small-note">Start with Chill or try Practice at 75% speed. Space or Escape pauses safely; switching tabs pauses automatically.</p></div><div class="dialog-footer"><span>No failure in the lesson.</span><button class="button primary" data-action="start-tutorial">Try the guided lesson ▶</button></div></dialog>
+<dialog aria-labelledby="onboarding-heading" id="onboarding-dialog" class="onboarding-dialog">
+<div class="dialog-heading"><div><span class="eyebrow">FIRST RUN · ABOUT THREE MINUTES</span><h2 id="onboarding-heading">Find the beat before the score.</h2></div><button aria-label="Close first-run guide" class="icon-button" data-action="onboarding-skip">×</button></div>
+<div class="onboarding-body">
+  <section class="onboarding-intro"><span class="onboarding-step">01 · FOUR LANES</span><h3>Meet your controls.</h3><p>When a note reaches the white line, press the matching key—or tap that lane on touch screens. Try every lane once.</p>
+    <div class="onboard-keys" role="group" aria-label="Try the four rhythm lanes">
+      <button data-onboard-lane="0"><span>●</span><b id="onboard-key-0">D</b><small>LEFT</small></button>
+      <button data-onboard-lane="1"><span>◆</span><b id="onboard-key-1">F</b><small>LEFT</small></button>
+      <button data-onboard-lane="2"><span>■</span><b id="onboard-key-2">J</b><small>RIGHT</small></button>
+      <button data-onboard-lane="3"><span>▲</span><b id="onboard-key-3">K</b><small>RIGHT</small></button>
+    </div><p class="onboard-status" id="onboarding-key-status" role="status">Try the four lanes · 0 / 4</p>
+  </section>
+  <section><span class="onboarding-step">02 · READ THE NOTES</span><div class="onboarding-rules">
+    <article><b>Tap</b><p>Press once when the note center reaches the white line.</p></article>
+    <article><b>Chord</b><p>Two notes arrive together. Press both lanes at the same time.</p></article>
+    <article><b>Hold</b><p>Keep the key down through the tail, then release near its end.</p></article>
+  </div></section>
+  <section><span class="onboarding-step">03 · PICK YOUR PATH</span><div class="onboarding-paths">
+    <article><span>ARCADE</span><b>Your real score.</b><p>Original speed. Scores, stars, personal bests and progression save.</p></article>
+    <article><span>PRACTICE</span><b>Learn without pressure.</b><p>Slow the song, isolate sections and loop them. Practice never changes records.</p></article>
+  </div></section>
+  <section class="onboarding-recommend"><div><span class="onboarding-step">RECOMMENDED FIRST FULL TRACK</span><h3>First Pulse · Chill</h3><p>Clear rhythm, forgiving density, full-speed music. A better first benchmark than jumping straight into Flow.</p></div><span class="recommend-badge">START HERE</span></section>
+</div>
+<div class="dialog-footer onboarding-footer"><button class="text-button" data-action="onboarding-skip">Explore on my own</button><div><button class="button outline" data-action="start-tutorial">30-second guided lesson</button><button class="button primary" data-action="first-song">Play First Pulse · Chill ▶</button></div></div>
+</dialog>
 <dialog aria-labelledby="calibration-heading" id="calibration-dialog"><div class="dialog-heading"><div><span class="eyebrow">LISTEN FIRST. TAP SECOND.</span><h2 id="calibration-heading">Find your timing.</h2></div><button aria-label="Close calibration" class="icon-button" data-action="close-calibration">×</button></div><div class="calibration-body"><p id="calibration-instructions">Tap with the clicks, using Space or the pad. The first four clicks are a warm-up. This estimates your combined device and tapping offset, not hardware latency alone.</p><div class="calibration-orbit"><span id="calibration-pulse"></span><b id="calibration-counter">Ready</b></div><button class="button primary calibration-pad" data-action="calibration-tap">Tap to the click <kbd>Space</kbd></button><div class="calibration-dots" id="calibration-dots"></div><p id="calibration-result" role="status">Use the headphones or speakers you play with.</p></div><div class="dialog-footer"><button class="button outline" data-action="start-calibration" id="calibration-start">Start calibration</button><button class="button primary" data-action="apply-calibration" disabled="" id="calibration-apply">Apply offset</button></div></dialog>
 <dialog aria-labelledby="confirm-heading" id="confirm-dialog"><div class="dialog-heading"><h2 id="confirm-heading">Reset your records?</h2></div><p class="confirm-copy" id="confirm-copy">This removes your local scores, milestones, and settings. Export a backup first to keep a copy.</p><div class="dialog-footer"><button class="button outline" data-close="">Cancel</button><button class="button primary" id="confirm-action">Reset everything</button></div></dialog>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
@@ -60791,12 +60829,12 @@ body.playing .warning-banner{display:none}
   root.BeatAudio = { AudioEngine, Transport, composition, musicLandmarks, musicIntegrationAudit, LANDMARK_ROLE_WEIGHT, QUALITY_AUDIT, PHASE11_REWORKS, contentQualityAudit, phase11QualityAudit, SONGWRITING, writingFor, writingSignature, songwritingAudit, MIX_PROFILES, mixProfileFor, mixSignature, productionAudit, GROOVE_PROFILES, grooveFor, grooveSignature, grooveAudit, GAME_FEEL, gameFeelAudit };
  })(globalThis);
 </script>
-<script>/* BeatCraft 3 — Phase 10 release certification manifest and deterministic audit. */
+<script>/* BeatCraft 3 — Phase 13 release certification manifest and deterministic audit. */
 (function(root){
   'use strict';
   const C=root.BeatCore,A=root.BeatAudio;
   const MANIFEST=Object.freeze({
-    product:'BeatCraft 3',release:'3.0.0-rc3',phase:12,catalog:'core-18-v1',saveSchema:C.VERSION,
+    product:'BeatCraft 3',release:'3.0.0-rc4',phase:13,catalog:'core-18-v1',saveSchema:C.VERSION,
     playableTracks:28,coreTracks:18,verifiedCC0Tracks:10,retiredOriginals:6,chartSlots:84,coreGeneratedCharts:54,officialPackSlots:30,
     scope:Object.freeze({core:'automated-release-candidate',officialPack:'human-certification-required',subjectiveMusicAudit:'human-listening-required',subjectiveChartPlaytest:'human-playtest-required'})
   });
@@ -60851,7 +60889,7 @@ body.playing .warning-banner{display:none}
   root.BeatRelease=Object.freeze({MANIFEST,audit});
 })(globalThis);
 </script>
-<script>/* BeatCraft 3 — Phase 10 RC1 game feel, input, rendering, responsiveness and persistence. */
+<script>/* BeatCraft 3 — Phase 13 first-run UX, game feel, input, rendering and persistence. */
 (() => {
   'use strict';
   const C = window.BeatCore, { AudioEngine, Transport } = window.BeatAudio;
@@ -60861,7 +60899,7 @@ body.playing .warning-banner{display:none}
   const timeLabel = ms => { const secs = Math.max(0, Math.floor(ms / 1000)); return `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`; };
   const escapeHTML = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const keyLabel = code => ({ ArrowLeft: '←', ArrowRight: '→', ArrowUp: '↑', ArrowDown: '↓', Semicolon: ';', Quote: "'", Comma: ',', Period: '.', Slash: '/', BracketLeft: '[', BracketRight: ']' }[code] || code.replace(/^(Key|Digit)/, ''));
-  const STORAGE_KEY = 'beatcraft.v2', BACKUP_KEY = 'beatcraft.v2.backup', MAPS_KEY = 'beatcraft.maps.v1';
+  const STORAGE_KEY = 'beatcraft.v2', BACKUP_KEY = 'beatcraft.v2.backup', MAPS_KEY = 'beatcraft.maps.v1', ONBOARDING_KEY = 'beatcraft.onboarding.v1';
   let storageOK = true, recovered = false;
   function loadSave() {
     try {
@@ -60931,6 +60969,8 @@ body.playing .warning-banner{display:none}
   const ui = { view: 'library', mode: 'arcade', preview: null, previewTimer: null, lastConfig: null, lastResult: null, binding: -1, operation: 0, loopRound: 1, mapperReturn: 'library' };
   const phase9 = { running:false, stop:false, current:null, done:0, total:0, errors:[] };
   let run = null, cal = null, toastTimer = null, saveTimer = null, confirmCallback = null;
+  let onboardingSessionSeen = false;
+  const onboardingHits = new Set();
   const sources = Array.from({ length: 4 }, () => new Set()), pointers = new Map();
 
   const FEEL = window.BeatAudio.GAME_FEEL;
@@ -60944,6 +60984,43 @@ body.playing .warning-banner{display:none}
     if(!save.settings.haptics||navigator.vibrate==null)return;
     const pattern=judgmentFeel(grade).haptic||[6];
     try{navigator.vibrate(pattern);}catch(_){}
+  }
+
+  function onboardingWasSeen() {
+    if (onboardingSessionSeen) return true;
+    try { return localStorage.getItem(ONBOARDING_KEY) === '1'; } catch (_) { return save.stats.plays > 0; }
+  }
+  function markOnboardingSeen() {
+    onboardingSessionSeen = true;
+    try { localStorage.setItem(ONBOARDING_KEY, '1'); } catch (_) {}
+  }
+  function renderOnboarding() {
+    for (let lane=0; lane<4; lane++) {
+      const key=$(`onboard-key-${lane}`); if(key) key.textContent=keyLabel(save.settings.keys[lane]);
+      const button=document.querySelector(`[data-onboard-lane="${lane}"]`); if(button) button.classList.toggle('learned',onboardingHits.has(lane));
+    }
+    const count=onboardingHits.size,status=$('onboarding-key-status');
+    if(status){status.textContent=count===4?'All four lanes ready. You can start.':`Try the four lanes · ${count} / 4`;status.classList.toggle('complete',count===4);}
+  }
+  function showOnboarding(force=false) {
+    if(!force && (onboardingWasSeen() || save.stats.plays>0)) return;
+    markOnboardingSeen();
+    closeDialogs(); onboardingHits.clear(); renderOnboarding();
+    $('onboarding-dialog').showModal();
+  }
+  function onboardingLane(lane) {
+    lane=Number(lane); if(lane<0||lane>3)return;
+    onboardingHits.add(lane); renderOnboarding();
+    audio.ensure().then(ok=>{if(ok) audio.hit(lane,'great','head',onboardingHits.size);}).catch(()=>{});
+  }
+  function startFirstSong() {
+    markOnboardingSeen(); save.selected=1; save.difficulty='chill'; ui.mode='arcade'; persist();
+    startRun(getConfig({trackId:1,difficulty:'chill',mode:'arcade',demo:false,daily:null,rate:1,section:'full',loop:false,mirror:false}));
+  }
+  function updateFirstRunUI() {
+    const first=save.stats.clears===0;
+    const card=$('first-run-card'); if(card) card.hidden=!first;
+    document.body.classList.toggle('first-run-active',first);
   }
 
   function persist() {
@@ -61104,7 +61181,7 @@ body.playing .warning-banner{display:none}
     $$('[data-difficulty]').forEach(b => { const selected = b.dataset.difficulty === save.difficulty; b.classList.toggle('selected', selected); b.setAttribute('aria-pressed', String(selected)); });
     $$('[data-mode]').forEach(b => { const selected = b.dataset.mode === ui.mode; b.classList.toggle('selected', selected); b.setAttribute('aria-pressed', String(selected)); });
     $('practice-options').hidden = ui.mode !== 'practice';
-    text('mode-description', ui.mode === 'practice' ? 'No failure. Slow down, isolate a section, and loop it. Scores are not saved.' : 'Keep your groove meter alive. Chase a personal best.');
+    text('mode-description', ui.mode === 'practice' ? 'Unranked · Slow the song, isolate or loop sections, and learn without pressure. Records never change.' : 'Ranked · Scores, stars and personal bests save. The groove meter can end the run.'); updateFirstRunUI();
     const oldSection = $('practice-section').value, previewChart = chartFor(t, save.difficulty), totalBars = C.chartBars(previewChart);
     $('practice-section').innerHTML = '<option value="full">Full track</option>' + Array.from({ length: Math.ceil(totalBars / 4) }, (_, i) => `<option value="${i * 4}">Bars ${i * 4 + 1}–${Math.min(totalBars, i * 4 + 4)} · ${C.sectionName(i * 4, totalBars)}</option>`).join('');
     if ([...$('practice-section').options].some(o => o.value === oldSection)) $('practice-section').value = oldSection;
@@ -61127,7 +61204,7 @@ body.playing .warning-banner{display:none}
     ['volume', 'music', 'sfx'].forEach(k => { $(`setting-${k}`).value = Math.round(s[k] * 100); text(`${k}-value`, `${Math.round(s[k] * 100)}%`); });
     ['speed', 'offset'].forEach(k => { $(`setting-${k}`).value = s[k]; text(`${k}-value`, k === 'speed' ? `${s.speed.toFixed(1)}×` : `${s.offset > 0 ? '+' : ''}${s.offset} ms`); });
     ['reducedMotion', 'contrast', 'haptics', 'timingHints'].forEach(k => { $(`setting-${k}`).checked = s[k]; });
-    renderBindings();
+    renderBindings(); renderOnboarding();
   }
   function renderBindings() {
     $('key-bindings').innerHTML = save.settings.keys.map((key, i) => `<button class="key-binding${ui.binding === i ? ' listening' : ''}" data-bind="${i}" aria-label="Change lane ${i + 1} key, currently ${escapeHTML(keyLabel(key))}">${ui.binding === i ? '…' : escapeHTML(keyLabel(key))}</button>`).join('');
@@ -61690,6 +61767,8 @@ body.playing .warning-banner{display:none}
     }
     if(!config.demo)audio.finish(result);
 
+    const replayButton=document.querySelector('.result-actions [data-action="replay"]');
+    if(replayButton) replayButton.innerHTML=chart.tutorial?'Play First Pulse · Chill <span>▶</span>':'One more run <span>↻</span>';
     $('practice-mistakes-button').hidden = !!chart.tutorial || !!config.mapperTest;
     text('practice-mistakes-button', config.demo ? 'Try it yourself in Practice' : 'Practice a tricky section');
     $('return-mapper-button').hidden = !config.mapperTest;
@@ -62168,15 +62247,18 @@ body.playing .warning-banner{display:none}
     'chart-qa-prev': () => moveChartQa(-1),
     'chart-qa-next': () => moveChartQa(1),
     'chart-qa-close': () => $('chart-qa-dialog').close(),
-    tutorial: () => { ++ui.operation; stopPreview(); $('help-dialog').showModal(); },
-    'start-tutorial': () => startRun(getConfig({ mode: 'tutorial', demo: false, daily: null, rate: 1, section: 'full', loop: false, mirror: false })),
+    tutorial: () => showOnboarding(true),
+    onboarding: () => { $('settings-dialog').close(); showOnboarding(true); },
+    'onboarding-skip': () => { markOnboardingSeen(); $('onboarding-dialog').close(); updateFirstRunUI(); },
+    'first-song': startFirstSong,
+    'start-tutorial': () => { markOnboardingSeen(); startRun(getConfig({ mode: 'tutorial', demo: false, daily: null, rate: 1, section: 'full', loop: false, mirror: false })); },
     preview: previewTrack,
     play: () => startRun(getConfig()),
     demo: () => startRun(getConfig({ mode: 'practice', demo: true, daily: null, rate: 1, loop: false })),
     daily: () => { const d = C.dailyChallenge(); save.selected = d.track.id; save.difficulty = d.difficulty; persist(); startRun(getConfig({ trackId: d.track.id, difficulty: d.difficulty, mode: 'arcade', rate: 1, mirror: d.mirror, daily: d.date, section: 'full', loop: false })); },
     pause: () => run?.paused ? resumeRun() : pauseRun(), resume: resumeRun,
     restart: () => { if (run) startRun({ ...run.config }); },
-    replay: () => { if (ui.lastConfig) startRun({ ...ui.lastConfig }); },
+    replay: () => { if (!ui.lastConfig) return; if(ui.lastConfig.mode==='tutorial') startFirstSong(); else startRun({ ...ui.lastConfig }); },
     quit: quitRun,
     'end-practice': () => finishRun(true),
     next: () => { if (!ui.lastConfig) return; const index=C.TRACKS.findIndex(t=>t.id===Number(ui.lastConfig.trackId)), next=C.TRACKS[(index>=0?index+1:0)%C.TRACKS.length].id; save.selected = next; persist(); startRun({ ...ui.lastConfig, trackId: next, daily: null, section: 'full', loop: false, mode: ui.lastConfig.mode === 'tutorial' ? 'arcade' : ui.lastConfig.mode }); },
@@ -62218,7 +62300,7 @@ body.playing .warning-banner{display:none}
     import: () => $('import-file').click(),
     'reset-progress': () => confirmAction('Reset your records?', 'This removes this browser’s scores, milestones, and settings. Export a backup first to keep a copy.', 'Reset everything', () => {
       ++ui.operation; stopPreview(); stopRun(); save = C.defaultSave();
-      try { localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(BACKUP_KEY); } catch (_) {}
+      try { localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(BACKUP_KEY); localStorage.removeItem(ONBOARDING_KEY); onboardingSessionSeen=false; } catch (_) {}
       persist(); closeDialogs(); applySettings(); updateLibrary(); renderStats(); showView('library'); toast('Local progress reset. A fresh record crate.');
     }),
     'reset-keys': () => { ui.binding = -1; save.settings.keys = [...C.DEFAULT_SETTINGS.keys]; applySettings(); persist(); text('binding-help', 'Keys reset to D F J K. Select a key to change it.'); },
@@ -62232,6 +62314,7 @@ body.playing .warning-banner{display:none}
     const target = e.target.closest('button'); if (!target || target.disabled) return;
     if (target.hasAttribute('data-close')) { target.closest('dialog')?.close(); return; }
     if (target.dataset.action) { const action = actions[target.dataset.action]; if (action) action(); return; }
+    if (target.dataset.onboardLane !== undefined) { onboardingLane(target.dataset.onboardLane); return; }
     if (target.dataset.qaDecision) { decideMusicQa(target.dataset.qaDecision); return; }
     if (target.dataset.qaIndex !== undefined) { stopMusicQa(); musicQaIndex=Number(target.dataset.qaIndex)||0; renderMusicQa(); return; }
     if (target.dataset.chartQaDecision) { decideChartQa(target.dataset.chartQaDecision); return; }
@@ -62288,6 +62371,7 @@ body.playing .warning-banner{display:none}
       save.settings.keys[ui.binding] = e.code; ui.binding = -1; applySettings(); persist(); text('binding-help', 'Key saved. Select another lane to change it.'); return;
     }
     if ($('calibration-dialog').open) { if (e.code === 'Space' && !e.repeat) { e.preventDefault(); calibrationTap(inputTime(e)); } return; }
+    if ($('onboarding-dialog').open) { const lane=laneForCode(e.code); if(lane>=0&&!e.repeat){e.preventDefault();onboardingLane(lane);} return; }
     if ($$('dialog[open]').length) return;
     if (ui.view === 'mapper') {
       if (e.code === 'Space') { e.preventDefault(); if (!e.repeat) mapperPlay(); return; }
@@ -62375,6 +62459,7 @@ body.playing .warning-banner{display:none}
   }
   $('storage-warning').hidden = storageOK;
   applySettings(); updateLibrary(); renderStats(); showView('library', false);
+  if (!onboardingWasSeen() && save.stats.plays===0) setTimeout(()=>showOnboarding(false),220);
   if (recovered) toast('Stored progress needed recovery. Check your collection and export a fresh backup.', 6500);
 })();
 </script>
