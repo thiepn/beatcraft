@@ -7,7 +7,7 @@
   "display": "standalone",
   "background_color": "#f6f1e5",
   "theme_color": "#f6f1e5",
-  "description": "BeatCraft 3 rhythm arcade with CC0 charts locked to detected attacks in the actual recording, accessible controls, local progress, and offline shell support.",
+  "description": "BeatCraft 3: import your own local songs, keep audio private in the browser, and generate recording-locked rhythm-game beatmaps locally.",
   "icons": [
     {
       "src": "./icon.svg",
