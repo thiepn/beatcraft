@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">BeatCraft</title>
+  <rect width="512" height="512" rx="120" fill="#242c32"/>
+  <g stroke="#f8ce47" stroke-width="54" stroke-linecap="round">
+    <path d="M120 292V204"/>
+    <path d="M216 372V122"/>
+    <path d="M312 332V166"/>
+    <path d="M408 284V212"/>
+  </g>
+</svg>
