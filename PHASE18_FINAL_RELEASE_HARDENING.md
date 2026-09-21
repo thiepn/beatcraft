@@ -46,7 +46,7 @@ Added a same-origin service worker and web app manifest.
 
 The service worker:
 
-- caches only the BeatCraft shell;
+- caches only the BeatCraft shell (`./`, `index.html`, manifest and SVG icon);
 - uses network-first navigation so fresh deployments win when online;
 - falls back to the cached app shell when navigation is offline;
 - never caches cross-origin Official Pack audio;
