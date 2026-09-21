@@ -1,7 +1,7 @@
 # BeatCraft 3 — Current Release Certification
 
-**Current build:** `3.0.0-rc4`  
-**Current phase:** 13 — First-Run Experience & Game UX Polish  
+**Current build:** `3.0.0-rc5`  
+**Current phase:** 14 — Progression & Replayability  
 **Catalog:** Core 18 + 10 CC0  
 **Playable tracks:** 28  
 **Chart slots:** 84  
@@ -10,7 +10,23 @@
 
 **PASS**
 
-The active Core 18 build still passes the automated release suite after Phase 13.
+The active build passes the automated release suite after Phase 14.
+
+### Phase 14 progression certification
+
+- cosmetic player levels: **1–99**
+- all **28 tracks remain unlocked at every level**
+- old-save XP / records migrate directly
+- Core mastery: **18 songs × 3 difficulties × 5 mastery points = 270**
+- mastery stages: Clear → 85% → S Rank → Full Combo → All Perfect
+- deterministic Daily Challenge
+- current / best daily streak tracking
+- 17 achievements
+- legacy `tour` achievement ID preserved
+- recent PB and timing-history support
+- Practice / autoplay / tutorial grant **0 XP and 0 ranked progress**
+- **0 horizontal overflow** in the Phase 14 Collection at 390 px
+- no page errors or console warnings in the Phase 14 test flow
 
 ### Core chart certification
 
@@ -19,24 +35,12 @@ The active Core 18 build still passes the automated release suite after Phase 13
 - **54 / 54 exact music-landmark alignment**
 - difficulty nesting preserved: **Chill ⊂ Flow ⊂ Rush**
 - perfect-session simulation remains green for all Core charts
-- no blocking BeatCraft difficulty-guide issues
 
-### Phase 13 UX certification
+### Release audit
 
-- one-time first-run guide opens on a fresh profile
-- interactive four-lane keyboard/touch introduction reaches 4 / 4
-- guided lesson launches correctly
-- tutorial results hand off directly to **First Pulse · Chill**
-- recommended first full run launches Arcade at 1.0×
-- beginner guidance disappears after the first real clear
-- Arcade / Practice behavior is explicitly differentiated
-- Official Pack and Beatmap Studio are explicitly separated from normal play
-- first-run guide can be replayed from Settings
-- tested at 1440×900, 390×844 and 320×760
-- **0 horizontal overflow**
-- **0 page errors**
-- **0 console errors/warnings**
-- `BeatRelease.audit()`: **17 / 17 checks pass**
+`BeatRelease.audit()`: **18 / 18 automated checks pass**
+
+The Phase 14 audit adds an explicit progression-integrity check on top of the previous music, chart, curation and game-feel gates.
 
 ## Human release gates still open
 
@@ -64,3 +68,4 @@ See:
 - `PHASE11_MUSIC_QA.md`
 - `PHASE12_CHART_CALIBRATION.md`
 - `PHASE13_FIRST_RUN_UX.md`
+- `PHASE14_PROGRESSION_REPLAYABILITY.md`
