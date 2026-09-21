@@ -1,7 +1,7 @@
 # BeatCraft 3 — Current Release Certification
 
-**Current build:** `3.0.0-rc6`  
-**Current phase:** 15 — Performance, Device & Latency Hardening  
+**Current build:** `3.0.0-rc7`  
+**Current phase:** 16 — Accessibility & Controls Certification  
 **Catalog:** Core 18 + 10 CC0  
 **Playable tracks:** 28  
 **Chart slots:** 84  
@@ -10,31 +10,36 @@
 
 **PASS**
 
-The active build passes the automated release suite after Phase 15.
+The active build passes the automated release suite after Phase 16.
 
-### Phase 15 device/performance certification
+### Phase 16 accessibility & controls certification
 
-- adaptive rendering is enabled by default and preserves note timing, scoring and chart density
-- sustained frame instability reduces decorative particle load and render DPR only
-- browser-local 3-second device diagnostics report frame pacing, DPR, viewport, touch capability and browser-exposed audio timing
-- existing click-track input-offset calibration remains available directly from diagnostics
-- Web Audio diagnostics expose sample rate, context state, base latency and output latency when the browser makes them available
-- decoded external CC0 audio uses an LRU-style cache capped at **2 inactive/active-safe decoded recordings**
-- active audio tracks are protected from cache eviction
-- `pagehide`, BFCache `pageshow`, online/offline changes, visibility loss and audio interruptions have explicit recovery paths
-- older saves migrate with Adaptive performance enabled
-- tested responsive layouts: **320, 390, 768 and 1440 px**
-- no horizontal overflow in tested layouts
-- live 390 px autoplay/session test passed
-- focus-loss pause/recovery path passed
+- four individually remappable gameplay keys
+- one-click control presets:
+  - **D F J K** two-hand default
+  - **A S D F** left-hand
+  - **J K L ;** right-hand
+  - **← ↓ ↑ →** arrow cluster
+- keyboard and touch can be mixed in-session
+- lanes always use permanent **● ◆ ■ ▲** symbols and numbers in addition to color
+- judgments remain explicit **Perfect / Great / Good / Miss** text; color is supplemental
+- reduced-motion mode
+- separate reduced-effects mode
+- high-contrast notes
+- large-control mode with **64 px** gameplay pads
+- optional screen-reader gameplay summaries for sections, misses/strays and major combo milestones
+- current key + shape exposed through gameplay pad accessible names
+- `aria-keyshortcuts` exposed on live gameplay pads
+- native dialogs/buttons retained
+- skip-to-content link retained
+- keyboard dialog focus restoration added
+- independent master / music / tap-feedback volume controls
+- tested at **1440 × 900**, **390 × 844**, and **320 × 760**
+- **0 unnamed visible buttons** in the tested accessibility flow
+- **0 horizontal overflow** at 390 px and 320 px
+- live screen-reader miss announcement verified during gameplay
 - **0 page errors**
 - **0 console errors/warnings**
-
-### Release audit
-
-`BeatRelease.audit()`: **19 / 19 automated checks pass**
-
-The Phase 15 audit adds explicit device-hardening certification on top of music, chart, curation, UX, progression and game-feel gates.
 
 ### Core chart certification
 
@@ -44,34 +49,47 @@ The Phase 15 audit adds explicit device-hardening certification on top of music,
 - difficulty nesting preserved: **Chill ⊂ Flow ⊂ Rush**
 - perfect-session simulation remains green for all Core charts
 
-## Important physical-device limitation
+### Performance/device certification
 
-Browser automation cannot establish true end-to-end acoustic latency or reliably identify every Bluetooth audio path.
+Phase 15 remains intact:
 
-Before final v3.0.0 release, physical-device acceptance should still include:
+- adaptive decorative rendering
+- decoded external-audio LRU cap
+- device diagnostics
+- latency information
+- background/focus recovery
 
-- Android phone speaker
-- Android + Bluetooth headphones/earbuds
-- iPhone/iPad where available
-- desktop/laptop speakers
-- desktop/laptop Bluetooth audio
-- Chrome/Chromium
-- Firefox
-- Safari/WebKit where available
-- Samsung Internet where available
-- 60 Hz and high-refresh-rate devices where available
+### Release audit
 
-Timing calibration should be rerun whenever the playback device changes.
+`BeatRelease.audit()`: **20 / 20 automated checks pass**
+
+The Phase 16 audit adds an explicit accessibility/controls integrity gate on top of the previous music, chart, progression, UX and device checks.
+
+## Accessibility scope boundary
+
+This is BeatCraft's internal accessibility certification, **not a formal WCAG conformance claim**.
+
+Menus, settings, controls, focus behavior and status feedback are assistive-technology aware. The real-time four-lane rhythm chart remains a spatial/timing interaction and is not represented as fully nonvisual gameplay.
 
 ## Human release gates still open
 
 Automated tests do not replace real listening or physical playtesting.
 
 ### Core music
-The 18 generated Core songs retain the Phase 11 listening checklist for subjective approval.
+The 18 generated Core songs still have the Phase 11 listening checklist for subjective approval.
 
 ### Core charts
 The app includes **Settings → Core chart playtest QA** for all **54 Core charts**, each at 1.0× with PASS / REWORK notes.
+
+### Physical accessibility/device checks
+Final hardware acceptance should still include real checks with:
+
+- Android TalkBack
+- iOS VoiceOver
+- Windows Narrator / NVDA / JAWS where available
+- external/adaptive keyboards
+- real touch ergonomics
+- supported-device vibration
 
 ### CC0 Official Pack
 The 10-song / 30-chart Official Pack still requires:
@@ -82,7 +100,7 @@ The 10-song / 30-chart Official Pack still requires:
 
 **Core 18 automated RC certification: PASS.**
 
-**Full 28-track human/physical-device release certification: NOT YET COMPLETE.**
+**Full 28-track human release certification: NOT YET COMPLETE.**
 
 See:
 
@@ -91,3 +109,4 @@ See:
 - `PHASE13_FIRST_RUN_UX.md`
 - `PHASE14_PROGRESSION_REPLAYABILITY.md`
 - `PHASE15_PERFORMANCE_DEVICE_LATENCY.md`
+- `PHASE16_ACCESSIBILITY_CONTROLS.md`
