@@ -17,8 +17,8 @@ The v3.0.0 source line passes the deterministic release audit after Phase 18.
 - release manifest frozen at `3.0.0` / Phase 18;
 - stale Phase 16 / RC8 footer metadata corrected;
 - GitHub Pages paths remain repository-relative;
-- web app manifest added;
-- same-origin offline shell service worker added;
+- web app manifest added with a scalable SVG app icon;
+- same-origin offline shell service worker added with shell-only cache scope;
 - navigation uses network-first with cached-shell fallback;
 - cross-origin Official Pack audio is not service-worker cached;
 - progress export upgraded to a versioned full backup;
