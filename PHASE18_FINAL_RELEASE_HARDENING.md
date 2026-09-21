@@ -86,3 +86,12 @@ Therefore:
 **v3.0.0 code/release hardening: PASS and frozen.**
 
 **Full 28-track human certification: not claimed until the remaining human gates are actually completed.**
+
+
+## Post-freeze patch — v3.0.1 timing hotfix
+
+The v3.0.0 freeze exposed a real CC0 gameplay defect: shipped auto-draft timestamps could be substantially out of phase with the external recordings.
+
+v3.0.1 replaces that path with recording-locked onset mapping before CC0 gameplay and raises the deterministic release audit from 22 to 23 checks.
+
+See `V3_0_1_CC0_TIMING_HOTFIX.md`.
