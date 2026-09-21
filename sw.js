@@ -1,5 +1,5 @@
 const CACHE_PREFIX='beatcraft-shell-';
-const CACHE='beatcraft-shell-v3.0.1';
+const CACHE='beatcraft-shell-v3.1.0';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 
 self.addEventListener('install',event=>{
