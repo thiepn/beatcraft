@@ -1,7 +1,7 @@
 # BeatCraft 3 — Current Release Certification
 
-**Current build:** `3.0.0-rc5`  
-**Current phase:** 14 — Progression & Replayability  
+**Current build:** `3.0.0-rc6`  
+**Current phase:** 15 — Performance, Device & Latency Hardening  
 **Catalog:** Core 18 + 10 CC0  
 **Playable tracks:** 28  
 **Chart slots:** 84  
@@ -10,23 +10,31 @@
 
 **PASS**
 
-The active build passes the automated release suite after Phase 14.
+The active build passes the automated release suite after Phase 15.
 
-### Phase 14 progression certification
+### Phase 15 device/performance certification
 
-- cosmetic player levels: **1–99**
-- all **28 tracks remain unlocked at every level**
-- old-save XP / records migrate directly
-- Core mastery: **18 songs × 3 difficulties × 5 mastery points = 270**
-- mastery stages: Clear → 85% → S Rank → Full Combo → All Perfect
-- deterministic Daily Challenge
-- current / best daily streak tracking
-- 17 achievements
-- legacy `tour` achievement ID preserved
-- recent PB and timing-history support
-- Practice / autoplay / tutorial grant **0 XP and 0 ranked progress**
-- **0 horizontal overflow** in the Phase 14 Collection at 390 px
-- no page errors or console warnings in the Phase 14 test flow
+- adaptive rendering is enabled by default and preserves note timing, scoring and chart density
+- sustained frame instability reduces decorative particle load and render DPR only
+- browser-local 3-second device diagnostics report frame pacing, DPR, viewport, touch capability and browser-exposed audio timing
+- existing click-track input-offset calibration remains available directly from diagnostics
+- Web Audio diagnostics expose sample rate, context state, base latency and output latency when the browser makes them available
+- decoded external CC0 audio uses an LRU-style cache capped at **2 inactive/active-safe decoded recordings**
+- active audio tracks are protected from cache eviction
+- `pagehide`, BFCache `pageshow`, online/offline changes, visibility loss and audio interruptions have explicit recovery paths
+- older saves migrate with Adaptive performance enabled
+- tested responsive layouts: **320, 390, 768 and 1440 px**
+- no horizontal overflow in tested layouts
+- live 390 px autoplay/session test passed
+- focus-loss pause/recovery path passed
+- **0 page errors**
+- **0 console errors/warnings**
+
+### Release audit
+
+`BeatRelease.audit()`: **19 / 19 automated checks pass**
+
+The Phase 15 audit adds explicit device-hardening certification on top of music, chart, curation, UX, progression and game-feel gates.
 
 ### Core chart certification
 
@@ -36,18 +44,31 @@ The active build passes the automated release suite after Phase 14.
 - difficulty nesting preserved: **Chill ⊂ Flow ⊂ Rush**
 - perfect-session simulation remains green for all Core charts
 
-### Release audit
+## Important physical-device limitation
 
-`BeatRelease.audit()`: **18 / 18 automated checks pass**
+Browser automation cannot establish true end-to-end acoustic latency or reliably identify every Bluetooth audio path.
 
-The Phase 14 audit adds an explicit progression-integrity check on top of the previous music, chart, curation and game-feel gates.
+Before final v3.0.0 release, physical-device acceptance should still include:
+
+- Android phone speaker
+- Android + Bluetooth headphones/earbuds
+- iPhone/iPad where available
+- desktop/laptop speakers
+- desktop/laptop Bluetooth audio
+- Chrome/Chromium
+- Firefox
+- Safari/WebKit where available
+- Samsung Internet where available
+- 60 Hz and high-refresh-rate devices where available
+
+Timing calibration should be rerun whenever the playback device changes.
 
 ## Human release gates still open
 
 Automated tests do not replace real listening or physical playtesting.
 
 ### Core music
-The 18 generated Core songs still have the Phase 11 listening checklist for subjective approval.
+The 18 generated Core songs retain the Phase 11 listening checklist for subjective approval.
 
 ### Core charts
 The app includes **Settings → Core chart playtest QA** for all **54 Core charts**, each at 1.0× with PASS / REWORK notes.
@@ -61,7 +82,7 @@ The 10-song / 30-chart Official Pack still requires:
 
 **Core 18 automated RC certification: PASS.**
 
-**Full 28-track human release certification: NOT YET COMPLETE.**
+**Full 28-track human/physical-device release certification: NOT YET COMPLETE.**
 
 See:
 
@@ -69,3 +90,4 @@ See:
 - `PHASE12_CHART_CALIBRATION.md`
 - `PHASE13_FIRST_RUN_UX.md`
 - `PHASE14_PROGRESSION_REPLAYABILITY.md`
+- `PHASE15_PERFORMANCE_DEVICE_LATENCY.md`
